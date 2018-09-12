@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="df0e7e04-47c9-4428-9ab7-cfebf0d7a560" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49982/GOPazigrad.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GOPazigrad.xsd" MetadataType="Schema" ID="6664c5d5-5f34-40ae-8f2a-bae2a31fb6fb" SourceId="1" SourceUrl="http://localhost:49982/GOPazigrad.svc?xsd=xsd0" />
+    <MetadataFile FileName="GOPazigrad1.xsd" MetadataType="Schema" ID="74985ab7-17ce-4231-9a07-94be16d50213" SourceId="1" SourceUrl="http://localhost:49982/GOPazigrad.svc?xsd=xsd1" />
+    <MetadataFile FileName="GOPazigrad.disco" MetadataType="Disco" ID="20977ba4-dd5f-4d8c-871f-81c4b86e88b0" SourceId="1" SourceUrl="http://localhost:49982/GOPazigrad.svc?disco" />
+    <MetadataFile FileName="GOPazigrad2.xsd" MetadataType="Schema" ID="2919d6a6-cd11-4056-ad43-901ca8858e88" SourceId="1" SourceUrl="http://localhost:49982/GOPazigrad.svc?xsd=xsd2" />
+    <MetadataFile FileName="GOPazigrad.wsdl" MetadataType="Wsdl" ID="e510afde-76ff-489d-a82e-3d39b18e42e6" SourceId="1" SourceUrl="http://localhost:49982/GOPazigrad.svc?wsdl" />
+    <MetadataFile FileName="GOPazigrad3.xsd" MetadataType="Schema" ID="88ce78c2-6fb9-4bad-acd1-dbf985fe4d3c" SourceId="1" SourceUrl="http://localhost:49982/GOPazigrad.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

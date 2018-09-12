@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PG.Servisi.PGGO" CodeBehind="PGGO.svc.cs" %>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GO_RIING_NET" Class="GO_GRADDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SQLRIING\PRODUKCIJA;Initial Catalog=GO_RIING_NET;Persist Security Info=True;User ID=produkcija" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GO_RIING_NETConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PREDMETI" Member="PREDMETIs">
+    <Type Name="PREDMETI">
+      <Column Name="IDPredmeta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDKorisnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDIzvora" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDKlasifikacije" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDGrupe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDStatusa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TekstPrijave" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DatumPrijave" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NaslovPrijave" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SifraPrijave" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Ulica" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="KucniBroj" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Posta" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Mjesto" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Javno" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Anonimno" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Komentiranje" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DatumZatvaranja" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Obrisan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tag" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Novi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Registracija" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

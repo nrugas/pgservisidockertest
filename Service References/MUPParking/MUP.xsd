@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://MUP.Parking/Tipovi" elementFormDefault="qualified" targetNamespace="http://MUP.Parking/Upit" id="MUP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="TipoviPodataka.xsd" namespace="http://MUP.Parking/Tipovi" />
+  <xs:complexType name="UpitIdentifikacija">
+    <xs:annotation>
+      <xs:documentation>
+        Svaki upit mora sadržavati OIB institucije koja traži provjeru, šifru "40" za svrhu pretrage, te mjesto i datum pretrage!
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="InstitucijaOIB" type="tns:OIB" />
+      <xs:element fixed="40" name="SvrhaPretrage" type="xs:int" />
+      <xs:element name="LokacijaPrekrsaja" type="tns:Teks64" />
+      <xs:element name="DatumPrekrsaja" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PretragaParams">
+    <xs:annotation>
+      <xs:documentation>
+        Pretrage se obavljaju isključivo preko cjelovitih registarska oznaka vozila!
+        Registarska oznaka ne smije sadržavati razmake, crtice i slično. Primjer ispravnog upita: ZG0000AA
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="RegistarskaOznaka" type="tns:RegOznaka" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

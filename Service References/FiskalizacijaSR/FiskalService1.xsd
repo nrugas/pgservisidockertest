@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" />
+  <xs:import schemaLocation="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="SpremiGresku">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idvlasnika" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="greska" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="napomena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiGreskuResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajCertifikate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iDcertifikata" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajCertifikateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajCertifikateResult" nillable="true" type="q1:ArrayOf_Certifikat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajCertifikat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="certifikat" nillable="true" type="q2:_Certifikat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajCertifikatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajCertifikatResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniCertifikat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="certifikat" nillable="true" type="q3:_Certifikat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniCertifikatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniCertifikatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiCertifikat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idcertifikata" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiCertifikatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiCertifikatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajAktivniCertifikat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idvlasnika" type="xs:int" />
+        <xs:element minOccurs="0" name="kada" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="demo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajAktivniCertifikatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajAktivniCertifikatResult" nillable="true" type="q4:_DajCertifikat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajAktivniProdCertifikatzaDan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idvlasnika" type="xs:int" />
+        <xs:element minOccurs="0" name="kada" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajAktivniProdCertifikatzaDanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajAktivniProdCertifikatzaDanResult" nillable="true" type="q5:_DajCertifikat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajAktivniProdCertifikat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idvlasnika" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajAktivniProdCertifikatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajAktivniProdCertifikatResult" nillable="true" type="q6:_DajCertifikat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajDrzave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oznaka" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajDrzaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajDrzaveResult" nillable="true" type="q7:ArrayOf_Drzava" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajDrzavu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="drz" nillable="true" type="q8:_Drzava" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajDrzavuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajDrzavuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniDrzavu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="drz" nillable="true" type="q9:_Drzava" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniDrzavuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniDrzavuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiDrzavu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oznaka" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiDrzavuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiDrzavuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPosteZa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idposte" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPosteZaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajPosteZaResult" nillable="true" type="q10:ArrayOf_Posta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPosteSve">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPosteSveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajPosteSveResult" nillable="true" type="q11:ArrayOf_Posta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPostePoBroju">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brojposte" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPostePoBrojuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajPostePoBrojuResult" nillable="true" type="q12:ArrayOf_Posta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajPostu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="posta" nillable="true" type="q13:_Posta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajPostuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajPostuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniPostu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="posta" nillable="true" type="q14:_Posta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniPostuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniPostuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiPostu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idposte" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiPostuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiPostuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPoslovneProstoreZa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idprostora" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPoslovneProstoreZaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajPoslovneProstoreZaResult" nillable="true" type="q15:ArrayOf_PoslovniProstor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPoslovneProstoreSve">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPoslovneProstoreSveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajPoslovneProstoreSveResult" nillable="true" type="q16:ArrayOf_PoslovniProstor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPoslovneProstoreVlasnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idvlasnika" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPoslovneProstoreVlasnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajPoslovneProstoreVlasnikaResult" nillable="true" type="q17:ArrayOf_PoslovniProstor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajPoslovniProstor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="drz" nillable="true" type="q18:_PoslovniProstor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajPoslovniProstorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajPoslovniProstorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniPoslovniProstor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="drz" nillable="true" type="q19:_PoslovniProstor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniPoslovniProstorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniPoslovniProstorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiPoslovniProstor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idprostora" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiPoslovniProstorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiPoslovniProstorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRadnoVrijemeZa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idradnogvremena" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRadnoVrijemeZaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRadnoVrijemeZaResult" nillable="true" type="q20:ArrayOf_RadnoVrijeme" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRadnoVrijemeSve">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRadnoVrijemeSveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRadnoVrijemeSveResult" nillable="true" type="q21:ArrayOf_RadnoVrijeme" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRadnoVrijemeProstora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idposlovnogprostora" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRadnoVrijemeProstoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRadnoVrijemeProstoraResult" nillable="true" type="q22:ArrayOf_RadnoVrijeme" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajRadnoVrijeme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="radvri" nillable="true" type="q23:_RadnoVrijeme" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajRadnoVrijemeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajRadnoVrijemeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniRadnoVrijeme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="radvri" nillable="true" type="q24:_RadnoVrijeme" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniRadnoVrijemeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniRadnoVrijemeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRadnoVrijeme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idradnogvremena" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRadnoVrijemeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiRadnoVrijemeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRadnoVrijemeZaPoslProst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idposlpros" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRadnoVrijemeZaPoslProstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiRadnoVrijemeZaPoslProstResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacuneTransakcijeZa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idractran" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacuneTransakcijeZaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRacuneTransakcijeZaResult" nillable="true" type="q25:ArrayOf_RacunTransakcija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacuneTransakcijeSve">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacuneTransakcijeSveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRacuneTransakcijeSveResult" nillable="true" type="q26:ArrayOf_RacunTransakcija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacuneTransakcijeZaBRRAC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idposlovnogprostora" type="xs:int" />
+        <xs:element minOccurs="0" name="idnaplatnoguredjaja" type="xs:int" />
+        <xs:element minOccurs="0" name="godina" type="xs:int" />
+        <xs:element minOccurs="0" name="rednibrojracuna" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacuneTransakcijeZaBRRACResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRacuneTransakcijeZaBRRACResult" nillable="true" type="q27:_RacunTransakcija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajRacunTransakcije">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="ractran" nillable="true" type="q28:_RacunTransakcija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajRacunTransakcijeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajRacunTransakcijeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniRacunTransakcije">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="ractran" nillable="true" type="q29:_RacunTransakcija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniRacunTransakcijeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniRacunTransakcijeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRacunTransakcije">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idractran" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRacunTransakcijeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiRacunTransakcijeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacunXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idracxml" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacunXMLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRacunXMLResult" nillable="true" type="q30:ArrayOf_RacunXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacunXMLPoRacunu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idracuna" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajRacunXMLPoRacunuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajRacunXMLPoRacunuResult" nillable="true" type="q31:ArrayOf_RacunXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajRacunXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="racxml" nillable="true" type="q32:_RacunXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajRacunXMLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajRacunXMLResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniRacunXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="racxml" nillable="true" type="q33:_RacunXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniRacunXMLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniRacunXMLResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRacunXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idracxml" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRacunXMLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiRacunXMLResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRacunXMLzaRacun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idracuna" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiRacunXMLzaRacunResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiRacunXMLzaRacunResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajVlasnikeZa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idvlasnika" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajVlasnikeZaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajVlasnikeZaResult" nillable="true" type="q34:ArrayOf_Vlasnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajVlasnikeSve">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajVlasnikeSveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajVlasnikeSveResult" nillable="true" type="q35:ArrayOf_Vlasnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajVlasnikeZaOIB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oib" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajVlasnikeZaOIBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajVlasnikeZaOIBResult" nillable="true" type="q36:ArrayOf_Vlasnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajVlasnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="vlasn" nillable="true" type="q37:_Vlasnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajVlasnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajVlasnikaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniVlasnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="vlasn" nillable="true" type="q38:_Vlasnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniVlasnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmjeniVlasnikaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiVlasnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idvlasnika" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiVlasnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiVlasnikaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajTipOsobeZa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="tip" nillable="true" type="q39:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajTipOsobeZaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajTipOsobeZaResult" nillable="true" type="q40:ArrayOf_TipOsobe" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajTipOsobeSve">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajTipOsobeSveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajTipOsobeSveResult" nillable="true" type="q41:ArrayOf_TipOsobe" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajZki">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVlasnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idposlovnogprostora" type="xs:int" />
+        <xs:element minOccurs="0" name="idnaplatnoguredjaja" type="xs:int" />
+        <xs:element minOccurs="0" name="godina" type="xs:int" />
+        <xs:element minOccurs="0" name="rednibrojracuna" type="xs:int" />
+        <xs:element minOccurs="0" name="datumvrijemeracuna" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="iznosracuna" type="xs:decimal" />
+        <xs:element minOccurs="0" name="demo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajZkiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="DajZkiResult" nillable="true" type="q42:_ZkiOdgovor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiskalizirajRacunSVE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVlasnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idposlovnogprostora" type="xs:int" />
+        <xs:element minOccurs="0" name="idnaplatnoguredjaja" type="xs:int" />
+        <xs:element minOccurs="0" name="godina" type="xs:int" />
+        <xs:element minOccurs="0" name="rednibrojracuna" type="xs:int" />
+        <xs:element minOccurs="0" name="oiboperatera" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="datumvrijemeracuna" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="iznosracuna" type="xs:decimal" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="obracunpdv" nillable="true" type="q43:ArrayOf_RacunPDV" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="obracunppo" nillable="true" type="q44:_RacunPDV" />
+        <xs:element minOccurs="0" name="neoporezivo" type="xs:decimal" />
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="nacinplacanja" type="q45:char" />
+        <xs:element minOccurs="0" name="demo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="naknadno" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiskalizirajRacunSVEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="FiskalizirajRacunSVEResult" nillable="true" type="q46:_FiskalOdgovor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiskalizirajRacun1pdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVlasnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idposlovnogprostora" type="xs:int" />
+        <xs:element minOccurs="0" name="idnaplatnoguredjaja" type="xs:int" />
+        <xs:element minOccurs="0" name="godina" type="xs:int" />
+        <xs:element minOccurs="0" name="rednibrojracuna" type="xs:int" />
+        <xs:element minOccurs="0" name="oiboperatera" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="datumvrijemeracuna" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="iznosracuna" type="xs:decimal" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="obracunpdv" nillable="true" type="q47:_RacunPDV" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="obracunppo" nillable="true" type="q48:_RacunPDV" />
+        <xs:element minOccurs="0" name="neoporezivo" type="xs:decimal" />
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="nacinplacanja" type="q49:char" />
+        <xs:element minOccurs="0" name="demo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="naknadno" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiskalizirajRacun1pdvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" minOccurs="0" name="FiskalizirajRacun1pdvResult" nillable="true" type="q50:_FiskalOdgovor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijaviPoslovniProstor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idposlovnogprostora" type="xs:int" />
+        <xs:element minOccurs="0" name="demo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijaviPoslovniProstorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrijaviPoslovniProstorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijaviPoslovniProstorP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idposlovnogprostora" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijaviPoslovniProstorPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrijaviPoslovniProstorPResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPSendSoapMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soapMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="demo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="uri" nillable="true" type="xs:anyURI" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XPSendSoapMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XPSendSoapMessageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

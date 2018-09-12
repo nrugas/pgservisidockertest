@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PAZIGRAD" Class="PostavkeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.0.1.106;Initial Catalog=PAZIGRAD;Persist Security Info=True;User ID=pazigrad" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PAZIGRADConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AKCIJE" Member="AKCIJEs">
+    <Type Name="AKCIJE">
+      <Column Name="IDAkcije" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivAkcije" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="AKCIJE_AKCIJE_DJELATNIKA" Member="AKCIJE_DJELATNIKAs" ThisKey="IDAkcije" OtherKey="IDAkcije" Type="AKCIJE_DJELATNIKA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ZAKONI_PRIJEVODI" Member="ZAKONI_PRIJEVODIs">
+    <Type Name="ZAKONI_PRIJEVODI">
+      <Column Name="IDPrijevoda" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDZakona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDJezika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Clanak" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="JEZICI_ZAKONI_PRIJEVODI" Member="JEZICI" ThisKey="IDJezika" OtherKey="IDJezika" Type="JEZICI" IsForeignKey="true" />
+      <Association Name="ZAKONI_ZAKONI_PRIJEVODI" Member="ZAKONI" ThisKey="IDZakona" OtherKey="IDZakona" Type="ZAKONI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DOZVOLE" Member="DOZVOLEs">
+    <Type Name="DOZVOLE">
+      <Column Name="IDDozvole" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NazivAkcije" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="OpisAkcije" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="DOZVOLE_GRUPE_PRIVILEGIJA" Member="GRUPE_PRIVILEGIJAs" ThisKey="IDDozvole" OtherKey="IDDozvole" Type="GRUPE_PRIVILEGIJA" />
+      <Association Name="DOZVOLE_DJELATNICI_DOZVOLE" Member="DJELATNICI_DOZVOLEs" ThisKey="IDDozvole" OtherKey="IDDozvole" Type="DJELATNICI_DOZVOLE" />
+      <Association Name="APLIKACIJE_DOZVOLE" Member="APLIKACIJE" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="APLIKACIJE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GRESKE" Member="GRESKEs">
+    <Type Name="GRESKE">
+      <Column Name="IDGreske" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Korisnik" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Napomena" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Greska" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="APLIKACIJE_GRESKE" Member="APLIKACIJE" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="APLIKACIJE" IsForeignKey="true" />
+      <Association Name="GRADOVI_GRESKE" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GRUPE_PRIVILEGIJA" Member="GRUPE_PRIVILEGIJAs">
+    <Type Name="GRUPE_PRIVILEGIJA">
+      <Column Name="IDPrivilegije" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDDozvole" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DOZVOLE_GRUPE_PRIVILEGIJA" Member="DOZVOLE" ThisKey="IDDozvole" OtherKey="IDDozvole" Type="DOZVOLE" IsForeignKey="true" />
+      <Association Name="PRIVILEGIJE_GRUPE_PRIVILEGIJA" Member="PRIVILEGIJE" ThisKey="IDPrivilegije" OtherKey="IDPrivilegije" Type="PRIVILEGIJE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JEZICI" Member="JEZICIs">
+    <Type Name="JEZICI">
+      <Column Name="IDJezika" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivJezika" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="JEZICI_ZAKONI_PRIJEVODI" Member="ZAKONI_PRIJEVODIs" ThisKey="IDJezika" OtherKey="IDJezika" Type="ZAKONI_PRIJEVODI" />
+      <Association Name="JEZICI_ZAKONI_OPISI_PRIJEVODI" Member="ZAKONI_OPISI_PRIJEVODIs" ThisKey="IDJezika" OtherKey="IDJezika" Type="ZAKONI_OPISI_PRIJEVODI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KORISNICI" Member="KORISNICIs">
+    <Type Name="KORISNICI">
+      <Column Name="IDKorisnika" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDPrivilegije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImePrezime" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="UID" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Lozinka" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobitel" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Blokiran" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Obrisan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PRIVILEGIJE_KORISNICI" Member="PRIVILEGIJE" ThisKey="IDPrivilegije" OtherKey="IDPrivilegije" Type="PRIVILEGIJE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MARKA_VOZILA" Member="MARKA_VOZILAs">
+    <Type Name="MARKA_VOZILA">
+      <Column Name="IDMarke" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivMarke" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NARUDZBE" Member="NARUDZBEs">
+    <Type Name="NARUDZBE">
+      <Column Name="IDNarudzbe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDjelatnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tristo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Petsto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sedamsto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Etuia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Traka" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Napomena" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Dostava" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Rijeseno" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="REDARSTVA_NARUDZBE" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+      <Association Name="GRADOVI_NARUDZBE" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_LOKACIJA" Member="OPREMA_LOKACIJAs">
+    <Type Name="OPREMA_LOKACIJA">
+      <Column Name="IDLokacije" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_MODEL" Member="OPREMA_MODELs">
+    <Type Name="OPREMA_MODEL">
+      <Column Name="IDModela" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDVrsteOpreme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NazivModela" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_MODEL_OPREMA_OSTALO" Member="OPREMA_OSTALOs" ThisKey="IDModela" OtherKey="IDModela" Type="OPREMA_OSTALO" />
+      <Association Name="OPREMA_MODEL_SIMOVI" Member="SIMOVIs" ThisKey="IDModela" OtherKey="IDModela" Type="SIMOVI" />
+      <Association Name="OPREMA_MODEL_TERMINALI" Member="TERMINALIs" ThisKey="IDModela" OtherKey="IDModela" Type="TERMINALI" />
+      <Association Name="OPREMA_MODEL_PRINTERI" Member="PRINTERIs" ThisKey="IDModela" OtherKey="IDModela" Type="PRINTERI" />
+      <Association Name="OPREMA_MODEL_PRINTERI1" Member="PRINTERIs1" ThisKey="IDModela" OtherKey="IDModela" Type="PRINTERI" />
+      <Association Name="OPREMA_MODEL_KAMERE" Member="KAMEREs" ThisKey="IDModela" OtherKey="IDModela" Type="KAMERE" />
+      <Association Name="OPREMA_VRSTA_OPREMA_MODEL" Member="OPREMA_VRSTA" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_VRSTA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_OS" Member="OPREMA_Os">
+    <Type Name="OPREMA_O">
+      <Column Name="IDOsa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivOsa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="OPREMA_O_TERMINALI" Member="TERMINALIs" ThisKey="IDOsa" OtherKey="IDOsa" Type="TERMINALI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PITANJE_ZAHTJEV" Member="PITANJE_ZAHTJEVs">
+    <Type Name="PITANJE_ZAHTJEV">
+      <Column Name="IDPitanja" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDjelatnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Pitanje" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Rijesen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="APLIKACIJE_PITANJE_ZAHTJEV" Member="APLIKACIJE" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="APLIKACIJE" IsForeignKey="true" />
+      <Association Name="GRADOVI_PITANJE_ZAHTJEV" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PORUKE_TERMINALA" Member="PORUKE_TERMINALAs">
+    <Type Name="PORUKE_TERMINALA">
+      <Column Name="IDPoruke" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDTerminala" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BrojTerminala" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Poruka" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.POSTAVKE_EMAILA" Member="POSTAVKE_EMAILAs">
+    <Type Name="POSTAVKE_EMAILA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Timeout" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Host" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultCredentials" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EnableSsl" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Port" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Lozinka" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.POSTE" Member="POSTEs">
+    <Type Name="POSTE">
+      <Column Name="IDPoste" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Posta" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Mjesto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PREDLOSCI_EMAILOVA" Member="PREDLOSCI_EMAILOVAs">
+    <Type Name="PREDLOSCI_EMAILOVA">
+      <Column Name="IDPredloska" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivPredloska" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Predlozak" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRIJENOS_RACUNOVODSTVO" Member="PRIJENOS_RACUNOVODSTVOs">
+    <Type Name="PRIJENOS_RACUNOVODSTVO">
+      <Column Name="IDPrijenosa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IDPrenesenih" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="BrojPrenesenih" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Response" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Request" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Uspjesno" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="GRADOVI_PRIJENOS_RACUNOVODSTVO" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRIVILEGIJE" Member="PRIVILEGIJEs">
+    <Type Name="PRIVILEGIJE">
+      <Column Name="IDPrivilegije" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="PRIVILEGIJE_GRUPE_PRIVILEGIJA" Member="GRUPE_PRIVILEGIJAs" ThisKey="IDPrivilegije" OtherKey="IDPrivilegije" Type="GRUPE_PRIVILEGIJA" />
+      <Association Name="PRIVILEGIJE_KORISNICI" Member="KORISNICIs" ThisKey="IDPrivilegije" OtherKey="IDPrivilegije" Type="KORISNICI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROBLEMI" Member="PROBLEMIs">
+    <Type Name="PROBLEMI">
+      <Column Name="IDProblema" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDjelatnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OpsiProblema" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Ponavljanje" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NakonRadnje" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IDTerminala" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDRedara" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DatumVrijeme" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Rijeseno" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="APLIKACIJE_PROBLEMI" Member="APLIKACIJE" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="APLIKACIJE" IsForeignKey="true" />
+      <Association Name="GRADOVI_PROBLEMI" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.REDARSTVA" Member="REDARSTVAs">
+    <Type Name="REDARSTVA">
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivRedarstva" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="REDARSTVA_NARUDZBE" Member="NARUDZBEs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="NARUDZBE" />
+      <Association Name="REDARSTVA_UPLATNICE_IZNOSI" Member="UPLATNICE_IZNOSIs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="UPLATNICE_IZNOSI" />
+      <Association Name="REDARSTVA_UPLATNICE_POVIJEST" Member="UPLATNICE_POVIJESTs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="UPLATNICE_POVIJEST" />
+      <Association Name="REDARSTVA_PRINTERI" Member="PRINTERIs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="PRINTERI" />
+      <Association Name="REDARSTVA_CERTIFIKATI_MUP" Member="CERTIFIKATI_MUPs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="CERTIFIKATI_MUP" />
+      <Association Name="REDARSTVA_DOHVAT_MUP" Member="DOHVAT_MUPs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="DOHVAT_MUP" />
+      <Association Name="REDARSTVA_POSTAVKE_ISPISA" Member="POSTAVKE_ISPISAs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="POSTAVKE_ISPISA" />
+      <Association Name="REDARSTVA_REDARSTVA_PAUK" Member="REDARSTVA_PAUKs" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA_PAUK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMS_LOG" Member="SMS_LOGs">
+    <Type Name="SMS_LOG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Error" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Broj" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Poruka" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UPLATE_ODVJETNIKA" Member="UPLATE_ODVJETNIKAs">
+    <Type Name="UPLATE_ODVJETNIKA">
+      <Column Name="IDUplate" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Poziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Iznos" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="BrojPrekrsaja" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GRADOVI_UPLATE_ODVJETNIKA" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UPLATNICE_IZNOSI" Member="UPLATNICE_IZNOSIs">
+    <Type Name="UPLATNICE_IZNOSI">
+      <Column Name="IDIznosa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Iznos" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Association Name="UPLATNICE_IZNOSI_UPLATNICE_POVIJEST" Member="UPLATNICE_POVIJESTs" ThisKey="IDIznosa" OtherKey="IDIznosa" Type="UPLATNICE_POVIJEST" />
+      <Association Name="REDARSTVA_UPLATNICE_IZNOSI" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UPLATNICE_POVIJEST" Member="UPLATNICE_POVIJESTs">
+    <Type Name="UPLATNICE_POVIJEST">
+      <Column Name="IDPovijesti" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDIznosa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stranica" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Nalog" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ispis" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Association Name="REDARSTVA_UPLATNICE_POVIJEST" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+      <Association Name="UPLATNICE_IZNOSI_UPLATNICE_POVIJEST" Member="UPLATNICE_IZNOSI" ThisKey="IDIznosa" OtherKey="IDIznosa" Type="UPLATNICE_IZNOSI" IsForeignKey="true" />
+      <Association Name="GRADOVI_UPLATNICE_POVIJEST" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VRSTE_PLACANJA" Member="VRSTE_PLACANJAs">
+    <Type Name="VRSTE_PLACANJA">
+      <Column Name="IDVrstePlacanja" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivVrstePlacanja" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Uplatnica" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ispis" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Uplatitelj" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NaRacunu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Kratica" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="VRSTE_PLACANJA_VRSTE_PLACANJA_STATUS" Member="VRSTE_PLACANJA_STATUS" ThisKey="IDVrstePlacanja" OtherKey="IDVrste" Type="VRSTE_PLACANJA_STATUS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ZAKONI" Member="ZAKONIs">
+    <Type Name="ZAKONI">
+      <Column Name="IDZakona" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SkracenOpis" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Clanak" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Kazna" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Neaktivan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ZAKONI_ZAKONI_PRIJEVODI" Member="ZAKONI_PRIJEVODIs" ThisKey="IDZakona" OtherKey="IDZakona" Type="ZAKONI_PRIJEVODI" />
+      <Association Name="ZAKONI_ZAKONI_OPISI" Member="ZAKONI_OPISIs" ThisKey="IDZakona" OtherKey="IDZakona" Type="ZAKONI_OPISI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ZAKONI_OPISI" Member="ZAKONI_OPISIs">
+    <Type Name="ZAKONI_OPISI">
+      <Column Name="IDOpisaZakona" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDZakona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="KratkiOpis" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ClanakPauka" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="ZAKONI_OPISI_ZAKONI_OPISI_PRIJEVODI" Member="ZAKONI_OPISI_PRIJEVODIs" ThisKey="IDOpisaZakona" OtherKey="IDOpisaZakona" Type="ZAKONI_OPISI_PRIJEVODI" />
+      <Association Name="ZAKONI_ZAKONI_OPISI" Member="ZAKONI" ThisKey="IDZakona" OtherKey="IDZakona" Type="ZAKONI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ZAKONI_OPISI_PRIJEVODI" Member="ZAKONI_OPISI_PRIJEVODIs">
+    <Type Name="ZAKONI_OPISI_PRIJEVODI">
+      <Column Name="IDPrijevodaOpisa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDOpisaZakona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDJezika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="JEZICI_ZAKONI_OPISI_PRIJEVODI" Member="JEZICI" ThisKey="IDJezika" OtherKey="IDJezika" Type="JEZICI" IsForeignKey="true" />
+      <Association Name="ZAKONI_OPISI_ZAKONI_OPISI_PRIJEVODI" Member="ZAKONI_OPISI" ThisKey="IDOpisaZakona" OtherKey="IDOpisaZakona" Type="ZAKONI_OPISI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SIMOVI_TARIFA" Member="SIMOVI_TARIFAs">
+    <Type Name="SIMOVI_TARIFA">
+      <Column Name="IDTarife" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivTarife" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OpisTarife" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="SIMOVI_TARIFA_SIMOVI" Member="SIMOVIs" ThisKey="IDTarife" OtherKey="IDTarife" Type="SIMOVI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_SERVIS" Member="OPREMA_SERVIs">
+    <Type Name="OPREMA_SERVI">
+      <Column Name="IDServisa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDVrsteOpreme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDOpreme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="OpisProblema" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Vracen" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Napomena" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DatumPovratka" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="OPREMA_VRSTA_OPREMA_SERVI" Member="OPREMA_VRSTA" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_VRSTA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_VRSTA" Member="OPREMA_VRSTAs">
+    <Type Name="OPREMA_VRSTA">
+      <Column Name="IDVrsteOpreme" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDStavke" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VrstaOpreme" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_VRSTA_OPREMA_MODEL" Member="OPREMA_MODELs" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_MODEL" />
+      <Association Name="OPREMA_VRSTA_OPREMA_SERVI" Member="OPREMA_SERVIs" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_SERVI" />
+      <Association Name="OPREMA_VRSTA_OPREMA_OSTALO" Member="OPREMA_OSTALOs" ThisKey="IDVrsteOpreme" OtherKey="IDVrste" Type="OPREMA_OSTALO" />
+      <Association Name="OPREMA_VRSTA_OPREMA_PRILOG" Member="OPREMA_PRILOGs" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_PRILOG" />
+      <Association Name="OPREMA_VRSTA_OPREMA_POVIJEST" Member="OPREMA_POVIJESTs" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_POVIJEST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROBLEMI_SLIKE" Member="PROBLEMI_SLIKEs">
+    <Type Name="PROBLEMI_SLIKE">
+      <Column Name="IDSlike" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDProblema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Problem" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Slika" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_OSTALO" Member="OPREMA_OSTALOs">
+    <Type Name="OPREMA_OSTALO">
+      <Column Name="IDOpreme" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDVrste" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDModela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InterniBroj" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SerijskiBroj" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DatumDolaska" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Jamstvo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JamstvoDo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Vlasnik" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ispravan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NazivVlasnika" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_MODEL_OPREMA_OSTALO" Member="OPREMA_MODEL" ThisKey="IDModela" OtherKey="IDModela" Type="OPREMA_MODEL" IsForeignKey="true" />
+      <Association Name="OPREMA_VRSTA_OPREMA_OSTALO" Member="OPREMA_VRSTA" ThisKey="IDVrste" OtherKey="IDVrsteOpreme" Type="OPREMA_VRSTA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SIMOVI" Member="SIMOVIs">
+    <Type Name="SIMOVI">
+      <Column Name="IDSima" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDTarife" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDModela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Interni" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SerijskiBroj" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Imsi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pin" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Puk" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPN" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Broj" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DatumUlaska" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Vlasnik" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ispravan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NazivVlasnika" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_MODEL_SIMOVI" Member="OPREMA_MODEL" ThisKey="IDModela" OtherKey="IDModela" Type="OPREMA_MODEL" IsForeignKey="true" />
+      <Association Name="SIMOVI_TARIFA_SIMOVI" Member="SIMOVI_TARIFA" ThisKey="IDTarife" OtherKey="IDTarife" Type="SIMOVI_TARIFA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TERMINALI" Member="TERMINALIs">
+    <Type Name="TERMINALI">
+      <Column Name="IDTerminala" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDModela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDOsa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NazivTerminala" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="IdentifikacijskiBroj" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Verzija" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="VrijemeZadnjegPristupa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Aktivan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Parametri" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ResetRequest" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RestartRequest" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ProgramExit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TerminalSuspend" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SelfDestruct" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InterniBroj" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SerijskiBroj" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DatumDolaska" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Jamstvo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JamstvoDo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Vlasnik" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Firmware" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Ispravan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NazivVlasnika" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_MODEL_TERMINALI" Member="OPREMA_MODEL" ThisKey="IDModela" OtherKey="IDModela" Type="OPREMA_MODEL" IsForeignKey="true" />
+      <Association Name="OPREMA_O_TERMINALI" Member="OPREMA_O" ThisKey="IDOsa" OtherKey="IDOsa" Type="OPREMA_O" IsForeignKey="true" />
+      <Association Name="GRADOVI_TERMINALI" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRINTERI" Member="PRINTERIs">
+    <Type Name="PRINTERI">
+      <Column Name="IDPrintera" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PIN" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Mac" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="NazivPrintera" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="InterniBroj" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDModela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SerijskiBroj" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatumDolaska" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Jamstvo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JamstvoDo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Vlasnik" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ispravan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NazivVlasnika" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="PRINTERI_OPREMA_POVIJEST" Member="OPREMA_POVIJESTs" ThisKey="IDPrintera" OtherKey="IDOpreme" Type="OPREMA_POVIJEST" />
+      <Association Name="OPREMA_MODEL_PRINTERI" Member="OPREMA_MODEL" ThisKey="IDModela" OtherKey="IDModela" Type="OPREMA_MODEL" IsForeignKey="true" />
+      <Association Name="OPREMA_MODEL_PRINTERI1" Member="OPREMA_MODEL1" ThisKey="IDModela" OtherKey="IDModela" Type="OPREMA_MODEL" IsForeignKey="true" />
+      <Association Name="REDARSTVA_PRINTERI" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+      <Association Name="GRADOVI_PRINTERI" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_PRILOG" Member="OPREMA_PRILOGs">
+    <Type Name="OPREMA_PRILOG">
+      <Column Name="IDPriloga" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDVrsteOpreme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDOpreme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vrijeme" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Prilog" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Ekstenzija" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_VRSTA_OPREMA_PRILOG" Member="OPREMA_VRSTA" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_VRSTA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CERTIFIKATI_MUP" Member="CERTIFIKATI_MUPs">
+    <Type Name="CERTIFIKATI_MUP">
+      <Column Name="IDCertifikata" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SmijePitati" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="REDARSTVA_CERTIFIKATI_MUP" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+      <Association Name="GRADOVI_CERTIFIKATI_MUP" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DOHVAT_MUP" Member="DOHVAT_MUPs">
+    <Type Name="DOHVAT_MUP">
+      <Column Name="IDDohvata" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDKorisnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDPrekrsaja" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vrijeme" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Registracija" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="REDARSTVA_DOHVAT_MUP" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+      <Association Name="GRADOVI_DOHVAT_MUP" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_MEMORIJA" Member="OPREMA_MEMORIJAs">
+    <Type Name="OPREMA_MEMORIJA">
+      <Column Name="IDMemorije" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KolicinaMemorije" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="OPREMA_MEMORIJA_KAMERE" Member="KAMEREs" ThisKey="IDMemorije" OtherKey="IDMemorije" Type="KAMERE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KAMERE" Member="KAMEREs">
+    <Type Name="KAMERE">
+      <Column Name="IDKamere" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDModela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDMemorije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NazivKamere" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NazivVlasnika" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="InterniBroj" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SerijskiBroj" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DatumDolaska" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Jamstvo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JamstvoDo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Vlasnik" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Firmware" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Ispravan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_MEMORIJA_KAMERE" Member="OPREMA_MEMORIJA" ThisKey="IDMemorije" OtherKey="IDMemorije" Type="OPREMA_MEMORIJA" IsForeignKey="true" />
+      <Association Name="OPREMA_MODEL_KAMERE" Member="OPREMA_MODEL" ThisKey="IDModela" OtherKey="IDModela" Type="OPREMA_MODEL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AKTIVNE_APLIKACIJE" Member="AKTIVNE_APLIKACIJEs">
+    <Type Name="AKTIVNE_APLIKACIJE">
+      <Column Name="IDAktive" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDjelatnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Racunalo" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ZadnjaAktivnost" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Verzija" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Grad" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Korisnik" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OS" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OdobravaZahtjeve" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Restart" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="APLIKACIJE_AKTIVNE_APLIKACIJE" Member="APLIKACIJE" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="APLIKACIJE" IsForeignKey="true" />
+      <Association Name="GRADOVI_AKTIVNE_APLIKACIJE" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APLIKACIJE" Member="APLIKACIJEs">
+    <Type Name="APLIKACIJE">
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivAplikacije" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Prikazi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="APLIKACIJE_DOZVOLE" Member="DOZVOLEs" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="DOZVOLE" />
+      <Association Name="APLIKACIJE_GRESKE" Member="GRESKEs" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="GRESKE" />
+      <Association Name="APLIKACIJE_PITANJE_ZAHTJEV" Member="PITANJE_ZAHTJEVs" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="PITANJE_ZAHTJEV" />
+      <Association Name="APLIKACIJE_PROBLEMI" Member="PROBLEMIs" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="PROBLEMI" />
+      <Association Name="APLIKACIJE_AKTIVNE_APLIKACIJE" Member="AKTIVNE_APLIKACIJEs" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="AKTIVNE_APLIKACIJE" />
+      <Association Name="APLIKACIJE_AKCIJE_DJELATNIKA" Member="AKCIJE_DJELATNIKAs" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="AKCIJE_DJELATNIKA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_POVIJEST" Member="OPREMA_POVIJESTs">
+    <Type Name="OPREMA_POVIJEST">
+      <Column Name="IDPovijesti" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDOpreme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDVrsteOpreme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDStatusa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Napomena" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="OPREMA_VRSTA_OPREMA_POVIJEST" Member="OPREMA_VRSTA" ThisKey="IDVrsteOpreme" OtherKey="IDVrsteOpreme" Type="OPREMA_VRSTA" IsForeignKey="true" />
+      <Association Name="PRINTERI_OPREMA_POVIJEST" Member="PRINTERI" ThisKey="IDOpreme" OtherKey="IDPrintera" Type="PRINTERI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OPREMA_POVIJEST_STATUS" Member="OPREMA_POVIJEST_STATUS">
+    <Type Name="OPREMA_POVIJEST_STATUS">
+      <Column Name="IDStatusa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivStatusa" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PODRSKA" Member="PODRSKAs">
+    <Type Name="PODRSKA">
+      <Column Name="IDPodrske" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ImePrezime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Materijali" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Salji" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IZVOR_VP" Member="IZVOR_VPs">
+    <Type Name="IZVOR_VP">
+      <Column Name="IDIzvora" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMAIL_LISTA" Member="EMAIL_LISTAs">
+    <Type Name="EMAIL_LISTA">
+      <Column Name="IDListe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ImePrezime" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Naredba" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Prilog" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="GRADOVI_EMAIL_LISTA" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DJELATNICI_DOZVOLE" Member="DJELATNICI_DOZVOLEs">
+    <Type Name="DJELATNICI_DOZVOLE">
+      <Column Name="IDDjelatnika" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDDozvole" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Dozvoljeno" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DOZVOLE_DJELATNICI_DOZVOLE" Member="DOZVOLE" ThisKey="IDDozvole" OtherKey="IDDozvole" Type="DOZVOLE" IsForeignKey="true" />
+      <Association Name="GRADOVI_DJELATNICI_DOZVOLE" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UPLATNICE" Member="UPLATNICEs">
+    <Type Name="UPLATNICE">
+      <Column Name="IDUplatnice" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Adresa" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="IBAN" Type="System.String" DbType="NVarChar(21) NOT NULL" CanBeNull="false" />
+      <Column Name="Poziv1" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Poziv2" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Sifra" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UlicaBroj" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Posta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mjesto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SWIFT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="GRADOVI_UPLATNICE" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VRSTE_BANAKA" Member="VRSTE_BANAKAs">
+    <Type Name="VRSTE_BANAKA">
+      <Column Name="IDBanke" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Kratica" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VRSTE_KARTICA" Member="VRSTE_KARTICAs">
+    <Type Name="VRSTE_KARTICA">
+      <Column Name="IDVrsteKartice" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivVrsteKartice" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sifra" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STATUS_VANJSKE_PRIJAVE" Member="STATUS_VANJSKE_PRIJAVEs">
+    <Type Name="STATUS_VANJSKE_PRIJAVE">
+      <Column Name="IDStatusa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Napomena" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PARKING_STATUS" Member="PARKING_STATUS">
+    <Type Name="PARKING_STATUS">
+      <Column Name="IDStatusa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Naplacuje" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.POSTAVKE_ISPISA" Member="POSTAVKE_ISPISAs">
+    <Type Name="POSTAVKE_ISPISA">
+      <Column Name="IDPostavke" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDVrstePlacanja" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDStatusa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Naslov" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Naredba" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Paragraf1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Boldano" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Primjeda" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ZalbaRedarstva" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OdlukaGradaCjenik" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OdlukaGradaLisice" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TemeljniKapital" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mjesto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HUB" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="R1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ZapisnikRacun" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ZapsinikNovaStrana" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StavkeNaZapisniku" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Privola" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="REDARSTVA_POSTAVKE_ISPISA" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+      <Association Name="GRADOVI_POSTAVKE_ISPISA" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GRADOVI" Member="GRADOVIs">
+    <Type Name="GRADOVI">
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivGrada" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Zoom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AktivacijskiKod" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IznosNaloga" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Instanca" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Baza" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Korisnik" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lozinka" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pauk" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Aktivan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Vpp" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Adresa" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Odvjetnici" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Grb" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ZalbaRedarstva" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PazigradNaIzvjestaju" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NaplataPauk" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Zadrska" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Chat" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Mapa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDGrupePromet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tip" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lisice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OdlukaLisice" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="VanjskePrijave" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PrilogObavijest" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DohvatVlasnikaMUP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RacunHUB" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NakonDanaLezarina" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parking" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="GRADOVI_GRESKE" Member="GRESKEs" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRESKE" />
+      <Association Name="GRADOVI_NARUDZBE" Member="NARUDZBEs" ThisKey="IDGrada" OtherKey="IDGrada" Type="NARUDZBE" />
+      <Association Name="GRADOVI_PITANJE_ZAHTJEV" Member="PITANJE_ZAHTJEVs" ThisKey="IDGrada" OtherKey="IDGrada" Type="PITANJE_ZAHTJEV" />
+      <Association Name="GRADOVI_PRIJENOS_RACUNOVODSTVO" Member="PRIJENOS_RACUNOVODSTVOs" ThisKey="IDGrada" OtherKey="IDGrada" Type="PRIJENOS_RACUNOVODSTVO" />
+      <Association Name="GRADOVI_PROBLEMI" Member="PROBLEMIs" ThisKey="IDGrada" OtherKey="IDGrada" Type="PROBLEMI" />
+      <Association Name="GRADOVI_UPLATE_ODVJETNIKA" Member="UPLATE_ODVJETNIKAs" ThisKey="IDGrada" OtherKey="IDGrada" Type="UPLATE_ODVJETNIKA" />
+      <Association Name="GRADOVI_UPLATNICE_POVIJEST" Member="UPLATNICE_POVIJESTs" ThisKey="IDGrada" OtherKey="IDGrada" Type="UPLATNICE_POVIJEST" />
+      <Association Name="GRADOVI_TERMINALI" Member="TERMINALIs" ThisKey="IDGrada" OtherKey="IDGrada" Type="TERMINALI" />
+      <Association Name="GRADOVI_PRINTERI" Member="PRINTERIs" ThisKey="IDGrada" OtherKey="IDGrada" Type="PRINTERI" />
+      <Association Name="GRADOVI_CERTIFIKATI_MUP" Member="CERTIFIKATI_MUPs" ThisKey="IDGrada" OtherKey="IDGrada" Type="CERTIFIKATI_MUP" />
+      <Association Name="GRADOVI_DOHVAT_MUP" Member="DOHVAT_MUPs" ThisKey="IDGrada" OtherKey="IDGrada" Type="DOHVAT_MUP" />
+      <Association Name="GRADOVI_AKTIVNE_APLIKACIJE" Member="AKTIVNE_APLIKACIJEs" ThisKey="IDGrada" OtherKey="IDGrada" Type="AKTIVNE_APLIKACIJE" />
+      <Association Name="GRADOVI_EMAIL_LISTA" Member="EMAIL_LISTAs" ThisKey="IDGrada" OtherKey="IDGrada" Type="EMAIL_LISTA" />
+      <Association Name="GRADOVI_DJELATNICI_DOZVOLE" Member="DJELATNICI_DOZVOLEs" ThisKey="IDGrada" OtherKey="IDGrada" Type="DJELATNICI_DOZVOLE" />
+      <Association Name="GRADOVI_UPLATNICE" Member="UPLATNICEs" ThisKey="IDGrada" OtherKey="IDGrada" Type="UPLATNICE" />
+      <Association Name="GRADOVI_POSTAVKE_ISPISA" Member="POSTAVKE_ISPISAs" ThisKey="IDGrada" OtherKey="IDGrada" Type="POSTAVKE_ISPISA" />
+      <Association Name="GRADOVI_AKCIJE_DJELATNIKA" Member="AKCIJE_DJELATNIKAs" ThisKey="IDGrada" OtherKey="IDGrada" Type="AKCIJE_DJELATNIKA" />
+      <Association Name="GRADOVI_VRSTE_PLACANJA_STATUS" Member="VRSTE_PLACANJA_STATUS" ThisKey="IDGrada" OtherKey="IDGrada" Type="VRSTE_PLACANJA_STATUS" />
+      <Association Name="GRADOVI_KORISNICI_GRADOVI" Member="KORISNICI_GRADOVIs" ThisKey="IDGrada" OtherKey="IDGrada" Type="KORISNICI_GRADOVI" />
+      <Association Name="GRADOVI_REDARSTVA_PAUK" Member="REDARSTVA_PAUKs" ThisKey="IDGrada" OtherKey="IDGrada" Type="REDARSTVA_PAUK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AKCIJE_DJELATNIKA" Member="AKCIJE_DJELATNIKAs">
+    <Type Name="AKCIJE_DJELATNIKA">
+      <Column Name="IDAkcijeKorisnika" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDDjelatnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDAkcije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDAplikacije" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Detalji" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AKCIJE_AKCIJE_DJELATNIKA" Member="AKCIJE" ThisKey="IDAkcije" OtherKey="IDAkcije" Type="AKCIJE" IsForeignKey="true" />
+      <Association Name="APLIKACIJE_AKCIJE_DJELATNIKA" Member="APLIKACIJE" ThisKey="IDAplikacije" OtherKey="IDAplikacije" Type="APLIKACIJE" IsForeignKey="true" />
+      <Association Name="GRADOVI_AKCIJE_DJELATNIKA" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STATUSI_STORNA" Member="STATUSI_STORNAs">
+    <Type Name="STATUSI_STORNA">
+      <Column Name="IDStatusStorna" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VRSTE_PLACANJA_STATUS" Member="VRSTE_PLACANJA_STATUS">
+    <Type Name="VRSTE_PLACANJA_STATUS">
+      <Column Name="IDVrste" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDStatusa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Iznos" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Association Name="GRADOVI_VRSTE_PLACANJA_STATUS" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+      <Association Name="VRSTE_PLACANJA_VRSTE_PLACANJA_STATUS" Member="VRSTE_PLACANJA" ThisKey="IDVrste" OtherKey="IDVrstePlacanja" Type="VRSTE_PLACANJA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KORISNICI_GRADOVI" Member="KORISNICI_GRADOVIs">
+    <Type Name="KORISNICI_GRADOVI">
+      <Column Name="IDKorisnika" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDOriginalnog" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="GRADOVI_KORISNICI_GRADOVI" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DRZAVA" Member="DRZAVAs">
+    <Type Name="DRZAVA">
+      <Column Name="Kratica" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NaplataVP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ISO_Kratica" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.REDARSTVA_PAUK" Member="REDARSTVA_PAUKs">
+    <Type Name="REDARSTVA_PAUK">
+      <Column Name="IDGrada" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDRedarstva" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPredloska" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="GRADOVI_REDARSTVA_PAUK" Member="GRADOVI" ThisKey="IDGrada" OtherKey="IDGrada" Type="GRADOVI" IsForeignKey="true" />
+      <Association Name="REDARSTVA_REDARSTVA_PAUK" Member="REDARSTVA" ThisKey="IDRedarstva" OtherKey="IDRedarstva" Type="REDARSTVA" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

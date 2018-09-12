@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="GO_GRAD">
+  <DataContextMoniker Name="/GO_GRADDataContext" />
+  <nestedChildShapes>
+    <classShape Id="83d9df67-2fbb-49e2-8b2e-ee05e677317e" absoluteBounds="2.125, 3.125, 2, 5.4246240234375">
+      <DataClassMoniker Name="/GO_GRADDataContext/PREDMETI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b28fc64e-78ff-4bc1-be2c-ab38c1a4cf26" absoluteBounds="2.14, 3.585, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

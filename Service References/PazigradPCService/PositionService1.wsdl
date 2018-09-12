@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://ri-ing.net/positionservice" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PositionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://ri-ing.net/positionservice" location="http://85.114.62.234:30102/services/PositionService?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IPositionService" type="i0:IPositionService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendPositionOnly">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPositionOnly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPosition">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUlice">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetUlice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLokalnaAdresa">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/InsertLokalnaAdresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUliceGoogle">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetUliceGoogle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PanicAlarm">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PanicAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriBrojNaUplatnici">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/ProvjeriBrojNaUplatnici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiPrekrsaj">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiPrekrsaj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LicencePlateRecognition">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/LicencePlateRecognition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LicencePlateRecognitionWithAngles">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/LicencePlateRecognitionWithAngles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParametriTerminala">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetParametriTerminala" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParametri">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetParametri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParametriAdd">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetParametriAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrekrsajeRegistracijeNovi">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetPrekrsajeRegistracijeNovi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalResetRequest">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetTerminalResetRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostojiPozivNaBroj">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PostojiPozivNaBroj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMobileVersion">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/RegisterMobileVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInfo">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInfoGetVer">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInfoGetVerSMSNum">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVerSMSNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInfoGetVerSMSNumWithCredentials">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVerSMSNumWithCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDateTime">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosebnoVozilo">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PosebnoVozilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostojiOdobrenje">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PostojiOdobrenje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromijeniLozinku">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PromijeniLozinku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTrenutnihLokacija">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/ListaTrenutnihLokacija" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPicture">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPictureWithAngle">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPictureWithAngle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPositionPauka">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPositionPauka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPositionsPauka">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPositionsPauka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNalog">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetNalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniStatusNaloga">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/IzmjeniStatusNaloga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlika">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetSlika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TekuciNalogID">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/TekuciNalogID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRazlozi">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetRazlozi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVozilo">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetVozilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNazivVozila">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetNazivVozila" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiCentralnuLokaciju">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/DohvatiCentralnuLokaciju" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtvoreniNalozi">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/OtvoreniNalozi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StornoNaloga">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/StornoNaloga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlikeIds">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetSlikeIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoviRacun">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetNoviRacun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Naplati">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/Naplati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintData">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetPrintData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NaplatiPrekrsaj">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/NaplatiPrekrsaj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Naplativo">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/Naplativo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajPorukuRedaru">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/DajPorukuRedaru" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcitajPoruku">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/ProcitajPoruku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiLog">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiLogSaRazlogom">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiLogSaRazlogom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiLogNovi">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiLogNovi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusZahtjeva">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/StatusZahtjeva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZahtjevZaPremjestanje">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/ZahtjevZaPremjestanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPictureInfoStamp">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPictureInfoStamp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPictureInfoStampWithAngle">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SendPictureInfoStampWithAngle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrimaZahtjeve">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PrimaZahtjeve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPodrucju">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/UPodrucju" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoviPredmet">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/NoviPredmet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiError">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiErrorNaTerminalu">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiErrorNaTerminalu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiAkciju">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiAkciju" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupe">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/DohvatiGrupe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupeDjelatnika">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/DohvatiGrupeDjelatnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrentConfig">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/CurrentConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForwardSMS">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/ForwardSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IspisObavijestiZaPauka">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/IspisObavijestiZaPauka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NaplatiSaFiskalizacijom">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/NaplatiSaFiskalizacijom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpremiDokument">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/SpremiDokument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrstePlacanja">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetVrstePlacanja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrinteri">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetPrinteri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminal">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDjelatnik">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetDjelatnik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZakoni">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetZakoni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriOpazanje">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/ProvjeriOpazanje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpazanja">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetOpazanja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSektoriZone">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetSektoriZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrivremenaObustavaNaloga">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PrivremenaObustavaNaloga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzvjestajSmjene">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/IzvjestajSmjene" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IspisRacuna">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/IspisRacuna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NeobradjeniZahtjevi">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/NeobradjeniZahtjevi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreuzmiZahtjev">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PreuzmiZahtjev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdustaniOdZahtjeva">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/OdustaniOdZahtjeva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaukOdustaoOdZahtjeva">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PaukOdustaoOdZahtjeva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdobriZahtjev">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/OdobriZahtjev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdbijZahtjev">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/OdbijZahtjev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreuzeoZahtjev">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/PreuzeoZahtjev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlokirani">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/GetBlokirani" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IznosDeblokade">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/IznosDeblokade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeblokirajVozilo">
+      <soap:operation soapAction="http://ri-ing.net/positionservice/IPositionService/DeblokirajVozilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PositionService">
+    <wsdl:port name="BasicHttpBinding_IPositionService" binding="tns:BasicHttpBinding_IPositionService">
+      <soap:address location="http://85.114.62.234:30102/services/PositionService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

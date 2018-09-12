@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ri-ing.net/positionservice" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ri-ing.net/positionservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ri-ing.net/positionservice/Imports">
+      <xsd:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd0" namespace="http://ri-ing.net/positionservice" />
+      <xsd:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" />
+      <xsd:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IzracunavanjeGeoUdaljenosti" />
+      <xsd:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPositionService_SendPositionOnly_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPositionOnly" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPositionOnly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPositionOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPosition" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetUlice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUlice" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetUlice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_InsertLokalnaAdresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLokalnaAdresa" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_InsertLokalnaAdresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLokalnaAdresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetUliceGoogle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUliceGoogle" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetUliceGoogle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUliceGoogleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetName" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PanicAlarm_InputMessage">
+    <wsdl:part name="parameters" element="tns:PanicAlarm" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PanicAlarm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PanicAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ProvjeriBrojNaUplatnici_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriBrojNaUplatnici" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ProvjeriBrojNaUplatnici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriBrojNaUplatniciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiPrekrsaj_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiPrekrsaj" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiPrekrsaj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiPrekrsajResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_LicencePlateRecognition_InputMessage">
+    <wsdl:part name="parameters" element="tns:LicencePlateRecognition" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_LicencePlateRecognition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LicencePlateRecognitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_LicencePlateRecognitionWithAngles_InputMessage">
+    <wsdl:part name="parameters" element="tns:LicencePlateRecognitionWithAngles" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_LicencePlateRecognitionWithAngles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LicencePlateRecognitionWithAnglesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetParametriTerminala_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParametriTerminala" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetParametriTerminala_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParametriTerminalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetParametri_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParametri" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetParametri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParametriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetParametriAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParametriAdd" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetParametriAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParametriAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetPrekrsajeRegistracijeNovi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrekrsajeRegistracijeNovi" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetPrekrsajeRegistracijeNovi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrekrsajeRegistracijeNoviResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetTerminalResetRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTerminalResetRequest" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetTerminalResetRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTerminalResetRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PostojiPozivNaBroj_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostojiPozivNaBroj" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PostojiPozivNaBroj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostojiPozivNaBrojResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_RegisterMobileVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterMobileVersion" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_RegisterMobileVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterMobileVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfoGetVer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoGetVer" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfoGetVer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoGetVerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfoGetVerSMSNum_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoGetVerSMSNum" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfoGetVerSMSNum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoGetVerSMSNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfoGetVerSMSNumWithCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoGetVerSMSNumWithCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SetInfoGetVerSMSNumWithCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInfoGetVerSMSNumWithCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetServerDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetServerDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PosebnoVozilo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PosebnoVozilo" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PosebnoVozilo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PosebnoVoziloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PostojiOdobrenje_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostojiOdobrenje" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PostojiOdobrenje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostojiOdobrenjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PromijeniLozinku_InputMessage">
+    <wsdl:part name="parameters" element="tns:PromijeniLozinku" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PromijeniLozinku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PromijeniLozinkuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ListaTrenutnihLokacija_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTrenutnihLokacija" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ListaTrenutnihLokacija_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTrenutnihLokacijaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPicture" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPictureWithAngle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPictureWithAngle" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPictureWithAngle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPictureWithAngleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPositionPauka_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPositionPauka" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPositionPauka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPositionPaukaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPositionsPauka_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPositionsPauka" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPositionsPauka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPositionsPaukaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetNalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNalog" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetNalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IzmjeniStatusNaloga_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniStatusNaloga" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IzmjeniStatusNaloga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniStatusNalogaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetSlika_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSlika" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetSlika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSlikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_TekuciNalogID_InputMessage">
+    <wsdl:part name="parameters" element="tns:TekuciNalogID" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_TekuciNalogID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TekuciNalogIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetRazlozi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRazlozi" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetRazlozi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRazloziResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetVozilo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVozilo" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetVozilo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoziloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetNazivVozila_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNazivVozila" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetNazivVozila_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNazivVozilaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DohvatiCentralnuLokaciju_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiCentralnuLokaciju" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DohvatiCentralnuLokaciju_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiCentralnuLokacijuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OtvoreniNalozi_InputMessage">
+    <wsdl:part name="parameters" element="tns:OtvoreniNalozi" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OtvoreniNalozi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OtvoreniNaloziResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_StornoNaloga_InputMessage">
+    <wsdl:part name="parameters" element="tns:StornoNaloga" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_StornoNaloga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StornoNalogaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetSlikeIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSlikeIds" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetSlikeIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSlikeIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetNoviRacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoviRacun" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetNoviRacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoviRacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_Naplati_InputMessage">
+    <wsdl:part name="parameters" element="tns:Naplati" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_Naplati_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NaplatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetPrintData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintData" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetPrintData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NaplatiPrekrsaj_InputMessage">
+    <wsdl:part name="parameters" element="tns:NaplatiPrekrsaj" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NaplatiPrekrsaj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NaplatiPrekrsajResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_Naplativo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Naplativo" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_Naplativo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NaplativoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DajPorukuRedaru_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajPorukuRedaru" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DajPorukuRedaru_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajPorukuRedaruResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ProcitajPoruku_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcitajPoruku" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ProcitajPoruku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcitajPorukuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiLog" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiLogSaRazlogom_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiLogSaRazlogom" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiLogSaRazlogom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiLogSaRazlogomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiLogNovi_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiLogNovi" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiLogNovi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiLogNoviResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_StatusZahtjeva_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatusZahtjeva" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_StatusZahtjeva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatusZahtjevaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ZahtjevZaPremjestanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:ZahtjevZaPremjestanje" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ZahtjevZaPremjestanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ZahtjevZaPremjestanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPictureInfoStamp_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPictureInfoStamp" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPictureInfoStamp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPictureInfoStampResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPictureInfoStampWithAngle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPictureInfoStampWithAngle" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SendPictureInfoStampWithAngle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPictureInfoStampWithAngleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PrimaZahtjeve_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrimaZahtjeve" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PrimaZahtjeve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrimaZahtjeveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_UPodrucju_InputMessage">
+    <wsdl:part name="parameters" element="tns:UPodrucju" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_UPodrucju_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UPodrucjuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NoviPredmet_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoviPredmet" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NoviPredmet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoviPredmetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiError_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiError" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiErrorNaTerminalu_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiErrorNaTerminalu" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiErrorNaTerminalu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiErrorNaTerminaluResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiAkciju_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiAkciju" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiAkciju_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiAkcijuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DohvatiGrupe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupe" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DohvatiGrupe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DohvatiGrupeDjelatnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeDjelatnika" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DohvatiGrupeDjelatnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeDjelatnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_CurrentConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:CurrentConfig" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_CurrentConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CurrentConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ForwardSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForwardSMS" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ForwardSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForwardSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IspisObavijestiZaPauka_InputMessage">
+    <wsdl:part name="parameters" element="tns:IspisObavijestiZaPauka" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IspisObavijestiZaPauka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IspisObavijestiZaPaukaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NaplatiSaFiskalizacijom_InputMessage">
+    <wsdl:part name="parameters" element="tns:NaplatiSaFiskalizacijom" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NaplatiSaFiskalizacijom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NaplatiSaFiskalizacijomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiDokument_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiDokument" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_SpremiDokument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiDokumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetVrstePlacanja_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrstePlacanja" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetVrstePlacanja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrstePlacanjaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetPrinteri_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrinteri" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetPrinteri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrinteriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetTerminal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTerminal" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetTerminal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetDjelatnik_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDjelatnik" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetDjelatnik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDjelatnikResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetZakoni_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZakoni" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetZakoni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZakoniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ProvjeriOpazanje_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriOpazanje" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_ProvjeriOpazanje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriOpazanjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetOpazanja_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpazanja" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetOpazanja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpazanjaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetSektoriZone_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSektoriZone" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetSektoriZone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSektoriZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PrivremenaObustavaNaloga_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrivremenaObustavaNaloga" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PrivremenaObustavaNaloga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrivremenaObustavaNalogaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IzvjestajSmjene_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzvjestajSmjene" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IzvjestajSmjene_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzvjestajSmjeneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IspisRacuna_InputMessage">
+    <wsdl:part name="parameters" element="tns:IspisRacuna" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IspisRacuna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IspisRacunaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NeobradjeniZahtjevi_InputMessage">
+    <wsdl:part name="parameters" element="tns:NeobradjeniZahtjevi" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_NeobradjeniZahtjevi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NeobradjeniZahtjeviResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PreuzmiZahtjev_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreuzmiZahtjev" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PreuzmiZahtjev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreuzmiZahtjevResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OdustaniOdZahtjeva_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdustaniOdZahtjeva" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OdustaniOdZahtjeva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdustaniOdZahtjevaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PaukOdustaoOdZahtjeva_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaukOdustaoOdZahtjeva" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PaukOdustaoOdZahtjeva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaukOdustaoOdZahtjevaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OdobriZahtjev_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdobriZahtjev" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OdobriZahtjev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdobriZahtjevResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OdbijZahtjev_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdbijZahtjev" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_OdbijZahtjev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdbijZahtjevResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PreuzeoZahtjev_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreuzeoZahtjev" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_PreuzeoZahtjev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreuzeoZahtjevResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetBlokirani_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlokirani" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_GetBlokirani_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlokiraniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IznosDeblokade_InputMessage">
+    <wsdl:part name="parameters" element="tns:IznosDeblokade" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_IznosDeblokade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IznosDeblokadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DeblokirajVozilo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeblokirajVozilo" />
+  </wsdl:message>
+  <wsdl:message name="IPositionService_DeblokirajVozilo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeblokirajVoziloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPositionService">
+    <wsdl:operation name="SendPositionOnly">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPositionOnly" message="tns:IPositionService_SendPositionOnly_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPositionOnlyResponse" message="tns:IPositionService_SendPositionOnly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPosition">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPosition" message="tns:IPositionService_SendPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPositionResponse" message="tns:IPositionService_SendPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUlice">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetUlice" message="tns:IPositionService_GetUlice_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetUliceResponse" message="tns:IPositionService_GetUlice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLokalnaAdresa">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/InsertLokalnaAdresa" message="tns:IPositionService_InsertLokalnaAdresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/InsertLokalnaAdresaResponse" message="tns:IPositionService_InsertLokalnaAdresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUliceGoogle">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetUliceGoogle" message="tns:IPositionService_GetUliceGoogle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetUliceGoogleResponse" message="tns:IPositionService_GetUliceGoogle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetName" message="tns:IPositionService_GetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetNameResponse" message="tns:IPositionService_GetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PanicAlarm">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PanicAlarm" message="tns:IPositionService_PanicAlarm_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PanicAlarmResponse" message="tns:IPositionService_PanicAlarm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriBrojNaUplatnici">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ProvjeriBrojNaUplatnici" message="tns:IPositionService_ProvjeriBrojNaUplatnici_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ProvjeriBrojNaUplatniciResponse" message="tns:IPositionService_ProvjeriBrojNaUplatnici_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiPrekrsaj">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiPrekrsaj" message="tns:IPositionService_SpremiPrekrsaj_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiPrekrsajResponse" message="tns:IPositionService_SpremiPrekrsaj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LicencePlateRecognition">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/LicencePlateRecognition" message="tns:IPositionService_LicencePlateRecognition_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/LicencePlateRecognitionResponse" message="tns:IPositionService_LicencePlateRecognition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LicencePlateRecognitionWithAngles">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/LicencePlateRecognitionWithAngles" message="tns:IPositionService_LicencePlateRecognitionWithAngles_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/LicencePlateRecognitionWithAnglesResponse" message="tns:IPositionService_LicencePlateRecognitionWithAngles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParametriTerminala">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetParametriTerminala" message="tns:IPositionService_GetParametriTerminala_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetParametriTerminalaResponse" message="tns:IPositionService_GetParametriTerminala_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParametri">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetParametri" message="tns:IPositionService_GetParametri_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetParametriResponse" message="tns:IPositionService_GetParametri_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParametriAdd">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetParametriAdd" message="tns:IPositionService_GetParametriAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetParametriAddResponse" message="tns:IPositionService_GetParametriAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrekrsajeRegistracijeNovi">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetPrekrsajeRegistracijeNovi" message="tns:IPositionService_GetPrekrsajeRegistracijeNovi_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetPrekrsajeRegistracijeNoviResponse" message="tns:IPositionService_GetPrekrsajeRegistracijeNovi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalResetRequest">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetTerminalResetRequest" message="tns:IPositionService_GetTerminalResetRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetTerminalResetRequestResponse" message="tns:IPositionService_GetTerminalResetRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostojiPozivNaBroj">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PostojiPozivNaBroj" message="tns:IPositionService_PostojiPozivNaBroj_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PostojiPozivNaBrojResponse" message="tns:IPositionService_PostojiPozivNaBroj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMobileVersion">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/RegisterMobileVersion" message="tns:IPositionService_RegisterMobileVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/RegisterMobileVersionResponse" message="tns:IPositionService_RegisterMobileVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInfo">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfo" message="tns:IPositionService_SetInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfoResponse" message="tns:IPositionService_SetInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInfoGetVer">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVer" message="tns:IPositionService_SetInfoGetVer_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVerResponse" message="tns:IPositionService_SetInfoGetVer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInfoGetVerSMSNum">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVerSMSNum" message="tns:IPositionService_SetInfoGetVerSMSNum_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVerSMSNumResponse" message="tns:IPositionService_SetInfoGetVerSMSNum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInfoGetVerSMSNumWithCredentials">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVerSMSNumWithCredentials" message="tns:IPositionService_SetInfoGetVerSMSNumWithCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SetInfoGetVerSMSNumWithCredentialsResponse" message="tns:IPositionService_SetInfoGetVerSMSNumWithCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDateTime">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetServerDateTime" message="tns:IPositionService_GetServerDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetServerDateTimeResponse" message="tns:IPositionService_GetServerDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PosebnoVozilo">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PosebnoVozilo" message="tns:IPositionService_PosebnoVozilo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PosebnoVoziloResponse" message="tns:IPositionService_PosebnoVozilo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostojiOdobrenje">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PostojiOdobrenje" message="tns:IPositionService_PostojiOdobrenje_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PostojiOdobrenjeResponse" message="tns:IPositionService_PostojiOdobrenje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PromijeniLozinku">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PromijeniLozinku" message="tns:IPositionService_PromijeniLozinku_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PromijeniLozinkuResponse" message="tns:IPositionService_PromijeniLozinku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTrenutnihLokacija">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ListaTrenutnihLokacija" message="tns:IPositionService_ListaTrenutnihLokacija_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ListaTrenutnihLokacijaResponse" message="tns:IPositionService_ListaTrenutnihLokacija_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPicture">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPicture" message="tns:IPositionService_SendPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPictureResponse" message="tns:IPositionService_SendPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPictureWithAngle">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPictureWithAngle" message="tns:IPositionService_SendPictureWithAngle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPictureWithAngleResponse" message="tns:IPositionService_SendPictureWithAngle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPositionPauka">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPositionPauka" message="tns:IPositionService_SendPositionPauka_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPositionPaukaResponse" message="tns:IPositionService_SendPositionPauka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPositionsPauka">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPositionsPauka" message="tns:IPositionService_SendPositionsPauka_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPositionsPaukaResponse" message="tns:IPositionService_SendPositionsPauka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNalog">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetNalog" message="tns:IPositionService_GetNalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetNalogResponse" message="tns:IPositionService_GetNalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniStatusNaloga">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IzmjeniStatusNaloga" message="tns:IPositionService_IzmjeniStatusNaloga_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IzmjeniStatusNalogaResponse" message="tns:IPositionService_IzmjeniStatusNaloga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSlika">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetSlika" message="tns:IPositionService_GetSlika_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetSlikaResponse" message="tns:IPositionService_GetSlika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TekuciNalogID">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/TekuciNalogID" message="tns:IPositionService_TekuciNalogID_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/TekuciNalogIDResponse" message="tns:IPositionService_TekuciNalogID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRazlozi">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetRazlozi" message="tns:IPositionService_GetRazlozi_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetRazloziResponse" message="tns:IPositionService_GetRazlozi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVozilo">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetVozilo" message="tns:IPositionService_GetVozilo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetVoziloResponse" message="tns:IPositionService_GetVozilo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNazivVozila">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetNazivVozila" message="tns:IPositionService_GetNazivVozila_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetNazivVozilaResponse" message="tns:IPositionService_GetNazivVozila_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiCentralnuLokaciju">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DohvatiCentralnuLokaciju" message="tns:IPositionService_DohvatiCentralnuLokaciju_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DohvatiCentralnuLokacijuResponse" message="tns:IPositionService_DohvatiCentralnuLokaciju_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OtvoreniNalozi">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OtvoreniNalozi" message="tns:IPositionService_OtvoreniNalozi_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OtvoreniNaloziResponse" message="tns:IPositionService_OtvoreniNalozi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StornoNaloga">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/StornoNaloga" message="tns:IPositionService_StornoNaloga_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/StornoNalogaResponse" message="tns:IPositionService_StornoNaloga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSlikeIds">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetSlikeIds" message="tns:IPositionService_GetSlikeIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetSlikeIdsResponse" message="tns:IPositionService_GetSlikeIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoviRacun">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetNoviRacun" message="tns:IPositionService_GetNoviRacun_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetNoviRacunResponse" message="tns:IPositionService_GetNoviRacun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Naplati">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/Naplati" message="tns:IPositionService_Naplati_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NaplatiResponse" message="tns:IPositionService_Naplati_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintData">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetPrintData" message="tns:IPositionService_GetPrintData_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetPrintDataResponse" message="tns:IPositionService_GetPrintData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NaplatiPrekrsaj">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NaplatiPrekrsaj" message="tns:IPositionService_NaplatiPrekrsaj_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NaplatiPrekrsajResponse" message="tns:IPositionService_NaplatiPrekrsaj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Naplativo">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/Naplativo" message="tns:IPositionService_Naplativo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NaplativoResponse" message="tns:IPositionService_Naplativo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajPorukuRedaru">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DajPorukuRedaru" message="tns:IPositionService_DajPorukuRedaru_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DajPorukuRedaruResponse" message="tns:IPositionService_DajPorukuRedaru_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcitajPoruku">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ProcitajPoruku" message="tns:IPositionService_ProcitajPoruku_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ProcitajPorukuResponse" message="tns:IPositionService_ProcitajPoruku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiLog">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiLog" message="tns:IPositionService_SpremiLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiLogResponse" message="tns:IPositionService_SpremiLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiLogSaRazlogom">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiLogSaRazlogom" message="tns:IPositionService_SpremiLogSaRazlogom_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiLogSaRazlogomResponse" message="tns:IPositionService_SpremiLogSaRazlogom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiLogNovi">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiLogNovi" message="tns:IPositionService_SpremiLogNovi_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiLogNoviResponse" message="tns:IPositionService_SpremiLogNovi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusZahtjeva">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/StatusZahtjeva" message="tns:IPositionService_StatusZahtjeva_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/StatusZahtjevaResponse" message="tns:IPositionService_StatusZahtjeva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ZahtjevZaPremjestanje">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ZahtjevZaPremjestanje" message="tns:IPositionService_ZahtjevZaPremjestanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ZahtjevZaPremjestanjeResponse" message="tns:IPositionService_ZahtjevZaPremjestanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPictureInfoStamp">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPictureInfoStamp" message="tns:IPositionService_SendPictureInfoStamp_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPictureInfoStampResponse" message="tns:IPositionService_SendPictureInfoStamp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPictureInfoStampWithAngle">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPictureInfoStampWithAngle" message="tns:IPositionService_SendPictureInfoStampWithAngle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SendPictureInfoStampWithAngleResponse" message="tns:IPositionService_SendPictureInfoStampWithAngle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrimaZahtjeve">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PrimaZahtjeve" message="tns:IPositionService_PrimaZahtjeve_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PrimaZahtjeveResponse" message="tns:IPositionService_PrimaZahtjeve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UPodrucju">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/UPodrucju" message="tns:IPositionService_UPodrucju_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/UPodrucjuResponse" message="tns:IPositionService_UPodrucju_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoviPredmet">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NoviPredmet" message="tns:IPositionService_NoviPredmet_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NoviPredmetResponse" message="tns:IPositionService_NoviPredmet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiError">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiError" message="tns:IPositionService_SpremiError_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiErrorResponse" message="tns:IPositionService_SpremiError_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiErrorNaTerminalu">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiErrorNaTerminalu" message="tns:IPositionService_SpremiErrorNaTerminalu_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiErrorNaTerminaluResponse" message="tns:IPositionService_SpremiErrorNaTerminalu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiAkciju">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiAkciju" message="tns:IPositionService_SpremiAkciju_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiAkcijuResponse" message="tns:IPositionService_SpremiAkciju_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupe">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DohvatiGrupe" message="tns:IPositionService_DohvatiGrupe_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DohvatiGrupeResponse" message="tns:IPositionService_DohvatiGrupe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupeDjelatnika">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DohvatiGrupeDjelatnika" message="tns:IPositionService_DohvatiGrupeDjelatnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DohvatiGrupeDjelatnikaResponse" message="tns:IPositionService_DohvatiGrupeDjelatnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrentConfig">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/CurrentConfig" message="tns:IPositionService_CurrentConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/CurrentConfigResponse" message="tns:IPositionService_CurrentConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForwardSMS">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ForwardSMS" message="tns:IPositionService_ForwardSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ForwardSMSResponse" message="tns:IPositionService_ForwardSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IspisObavijestiZaPauka">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IspisObavijestiZaPauka" message="tns:IPositionService_IspisObavijestiZaPauka_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IspisObavijestiZaPaukaResponse" message="tns:IPositionService_IspisObavijestiZaPauka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NaplatiSaFiskalizacijom">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NaplatiSaFiskalizacijom" message="tns:IPositionService_NaplatiSaFiskalizacijom_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NaplatiSaFiskalizacijomResponse" message="tns:IPositionService_NaplatiSaFiskalizacijom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpremiDokument">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiDokument" message="tns:IPositionService_SpremiDokument_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/SpremiDokumentResponse" message="tns:IPositionService_SpremiDokument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrstePlacanja">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetVrstePlacanja" message="tns:IPositionService_GetVrstePlacanja_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetVrstePlacanjaResponse" message="tns:IPositionService_GetVrstePlacanja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrinteri">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetPrinteri" message="tns:IPositionService_GetPrinteri_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetPrinteriResponse" message="tns:IPositionService_GetPrinteri_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminal">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetTerminal" message="tns:IPositionService_GetTerminal_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetTerminalResponse" message="tns:IPositionService_GetTerminal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDjelatnik">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetDjelatnik" message="tns:IPositionService_GetDjelatnik_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetDjelatnikResponse" message="tns:IPositionService_GetDjelatnik_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZakoni">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetZakoni" message="tns:IPositionService_GetZakoni_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetZakoniResponse" message="tns:IPositionService_GetZakoni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriOpazanje">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ProvjeriOpazanje" message="tns:IPositionService_ProvjeriOpazanje_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/ProvjeriOpazanjeResponse" message="tns:IPositionService_ProvjeriOpazanje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpazanja">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetOpazanja" message="tns:IPositionService_GetOpazanja_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetOpazanjaResponse" message="tns:IPositionService_GetOpazanja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSektoriZone">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetSektoriZone" message="tns:IPositionService_GetSektoriZone_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetSektoriZoneResponse" message="tns:IPositionService_GetSektoriZone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrivremenaObustavaNaloga">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PrivremenaObustavaNaloga" message="tns:IPositionService_PrivremenaObustavaNaloga_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PrivremenaObustavaNalogaResponse" message="tns:IPositionService_PrivremenaObustavaNaloga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzvjestajSmjene">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IzvjestajSmjene" message="tns:IPositionService_IzvjestajSmjene_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IzvjestajSmjeneResponse" message="tns:IPositionService_IzvjestajSmjene_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IspisRacuna">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IspisRacuna" message="tns:IPositionService_IspisRacuna_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IspisRacunaResponse" message="tns:IPositionService_IspisRacuna_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NeobradjeniZahtjevi">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NeobradjeniZahtjevi" message="tns:IPositionService_NeobradjeniZahtjevi_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/NeobradjeniZahtjeviResponse" message="tns:IPositionService_NeobradjeniZahtjevi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreuzmiZahtjev">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PreuzmiZahtjev" message="tns:IPositionService_PreuzmiZahtjev_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PreuzmiZahtjevResponse" message="tns:IPositionService_PreuzmiZahtjev_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdustaniOdZahtjeva">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OdustaniOdZahtjeva" message="tns:IPositionService_OdustaniOdZahtjeva_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OdustaniOdZahtjevaResponse" message="tns:IPositionService_OdustaniOdZahtjeva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaukOdustaoOdZahtjeva">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PaukOdustaoOdZahtjeva" message="tns:IPositionService_PaukOdustaoOdZahtjeva_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PaukOdustaoOdZahtjevaResponse" message="tns:IPositionService_PaukOdustaoOdZahtjeva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdobriZahtjev">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OdobriZahtjev" message="tns:IPositionService_OdobriZahtjev_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OdobriZahtjevResponse" message="tns:IPositionService_OdobriZahtjev_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdbijZahtjev">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OdbijZahtjev" message="tns:IPositionService_OdbijZahtjev_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/OdbijZahtjevResponse" message="tns:IPositionService_OdbijZahtjev_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreuzeoZahtjev">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PreuzeoZahtjev" message="tns:IPositionService_PreuzeoZahtjev_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/PreuzeoZahtjevResponse" message="tns:IPositionService_PreuzeoZahtjev_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlokirani">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetBlokirani" message="tns:IPositionService_GetBlokirani_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/GetBlokiraniResponse" message="tns:IPositionService_GetBlokirani_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IznosDeblokade">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IznosDeblokade" message="tns:IPositionService_IznosDeblokade_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/IznosDeblokadeResponse" message="tns:IPositionService_IznosDeblokade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeblokirajVozilo">
+      <wsdl:input wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DeblokirajVozilo" message="tns:IPositionService_DeblokirajVozilo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ri-ing.net/positionservice/IPositionService/DeblokirajVoziloResponse" message="tns:IPositionService_DeblokirajVozilo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

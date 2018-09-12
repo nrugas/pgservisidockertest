@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FiskalService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Fiskalizacija.Service" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFiskalService_SpremiGresku_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiGresku" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_SpremiGresku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpremiGreskuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajCertifikate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajCertifikate" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajCertifikate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajCertifikateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajCertifikat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajCertifikat" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajCertifikat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajCertifikatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniCertifikat_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniCertifikat" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniCertifikat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniCertifikatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiCertifikat_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiCertifikat" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiCertifikat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiCertifikatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajAktivniCertifikat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajAktivniCertifikat" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajAktivniCertifikat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajAktivniCertifikatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajAktivniProdCertifikatzaDan_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajAktivniProdCertifikatzaDan" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajAktivniProdCertifikatzaDan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajAktivniProdCertifikatzaDanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajAktivniProdCertifikat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajAktivniProdCertifikat" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajAktivniProdCertifikat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajAktivniProdCertifikatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajDrzave_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajDrzave" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajDrzave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajDrzaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajDrzavu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajDrzavu" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajDrzavu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajDrzavuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniDrzavu_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniDrzavu" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniDrzavu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniDrzavuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiDrzavu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiDrzavu" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiDrzavu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiDrzavuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPosteZa_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajPosteZa" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPosteZa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajPosteZaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPosteSve_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajPosteSve" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPosteSve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajPosteSveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPostePoBroju_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajPostePoBroju" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPostePoBroju_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajPostePoBrojuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajPostu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajPostu" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajPostu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajPostuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniPostu_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniPostu" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniPostu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniPostuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiPostu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPostu" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiPostu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPostuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPoslovneProstoreZa_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajPoslovneProstoreZa" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPoslovneProstoreZa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajPoslovneProstoreZaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPoslovneProstoreSve_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajPoslovneProstoreSve" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPoslovneProstoreSve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajPoslovneProstoreSveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPoslovneProstoreVlasnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajPoslovneProstoreVlasnika" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajPoslovneProstoreVlasnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajPoslovneProstoreVlasnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajPoslovniProstor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajPoslovniProstor" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajPoslovniProstor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajPoslovniProstorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniPoslovniProstor_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniPoslovniProstor" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniPoslovniProstor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniPoslovniProstorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiPoslovniProstor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPoslovniProstor" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiPoslovniProstor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPoslovniProstorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRadnoVrijemeZa_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRadnoVrijemeZa" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRadnoVrijemeZa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRadnoVrijemeZaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRadnoVrijemeSve_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRadnoVrijemeSve" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRadnoVrijemeSve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRadnoVrijemeSveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRadnoVrijemeProstora_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRadnoVrijemeProstora" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRadnoVrijemeProstora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRadnoVrijemeProstoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajRadnoVrijeme_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRadnoVrijeme" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajRadnoVrijeme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRadnoVrijemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniRadnoVrijeme_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniRadnoVrijeme" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniRadnoVrijeme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniRadnoVrijemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRadnoVrijeme_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRadnoVrijeme" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRadnoVrijeme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRadnoVrijemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRadnoVrijemeZaPoslProst_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRadnoVrijemeZaPoslProst" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRadnoVrijemeZaPoslProst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRadnoVrijemeZaPoslProstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacuneTransakcijeZa_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacuneTransakcijeZa" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacuneTransakcijeZa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacuneTransakcijeZaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacuneTransakcijeSve_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacuneTransakcijeSve" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacuneTransakcijeSve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacuneTransakcijeSveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacuneTransakcijeZaBRRAC_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacuneTransakcijeZaBRRAC" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacuneTransakcijeZaBRRAC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacuneTransakcijeZaBRRACResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajRacunTransakcije_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRacunTransakcije" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajRacunTransakcije_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRacunTransakcijeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniRacunTransakcije_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniRacunTransakcije" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniRacunTransakcije_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniRacunTransakcijeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRacunTransakcije_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRacunTransakcije" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRacunTransakcije_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRacunTransakcijeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacunXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacunXML" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacunXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacunXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacunXMLPoRacunu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacunXMLPoRacunu" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajRacunXMLPoRacunu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajRacunXMLPoRacunuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajRacunXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRacunXML" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajRacunXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRacunXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniRacunXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniRacunXML" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniRacunXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniRacunXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRacunXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRacunXML" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRacunXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRacunXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRacunXMLzaRacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRacunXMLzaRacun" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiRacunXMLzaRacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRacunXMLzaRacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajVlasnikeZa_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajVlasnikeZa" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajVlasnikeZa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajVlasnikeZaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajVlasnikeSve_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajVlasnikeSve" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajVlasnikeSve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajVlasnikeSveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajVlasnikeZaOIB_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajVlasnikeZaOIB" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajVlasnikeZaOIB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajVlasnikeZaOIBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajVlasnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajVlasnika" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DodajVlasnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajVlasnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniVlasnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniVlasnika" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_IzmjeniVlasnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjeniVlasnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiVlasnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVlasnika" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_ObrisiVlasnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVlasnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajTipOsobeZa_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajTipOsobeZa" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajTipOsobeZa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajTipOsobeZaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajTipOsobeSve_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajTipOsobeSve" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajTipOsobeSve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajTipOsobeSveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajZki_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajZki" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_DajZki_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajZkiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_FiskalizirajRacunSVE_InputMessage">
+    <wsdl:part name="parameters" element="tns:FiskalizirajRacunSVE" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_FiskalizirajRacunSVE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FiskalizirajRacunSVEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_FiskalizirajRacun1pdv_InputMessage">
+    <wsdl:part name="parameters" element="tns:FiskalizirajRacun1pdv" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_FiskalizirajRacun1pdv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FiskalizirajRacun1pdvResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_PrijaviPoslovniProstor_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrijaviPoslovniProstor" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_PrijaviPoslovniProstor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrijaviPoslovniProstorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_PrijaviPoslovniProstorP_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrijaviPoslovniProstorP" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_PrijaviPoslovniProstorP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrijaviPoslovniProstorPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_XPSendSoapMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:XPSendSoapMessage" />
+  </wsdl:message>
+  <wsdl:message name="IFiskalService_XPSendSoapMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XPSendSoapMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFiskalService">
+    <wsdl:operation name="SpremiGresku">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/SpremiGresku" message="tns:IFiskalService_SpremiGresku_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/SpremiGreskuResponse" message="tns:IFiskalService_SpremiGresku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajCertifikate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajCertifikate" message="tns:IFiskalService_DajCertifikate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajCertifikateResponse" message="tns:IFiskalService_DajCertifikate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajCertifikat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajCertifikat" message="tns:IFiskalService_DodajCertifikat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajCertifikatResponse" message="tns:IFiskalService_DodajCertifikat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniCertifikat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniCertifikat" message="tns:IFiskalService_IzmjeniCertifikat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniCertifikatResponse" message="tns:IFiskalService_IzmjeniCertifikat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiCertifikat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiCertifikat" message="tns:IFiskalService_ObrisiCertifikat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiCertifikatResponse" message="tns:IFiskalService_ObrisiCertifikat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajAktivniCertifikat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajAktivniCertifikat" message="tns:IFiskalService_DajAktivniCertifikat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajAktivniCertifikatResponse" message="tns:IFiskalService_DajAktivniCertifikat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajAktivniProdCertifikatzaDan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajAktivniProdCertifikatzaDan" message="tns:IFiskalService_DajAktivniProdCertifikatzaDan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajAktivniProdCertifikatzaDanResponse" message="tns:IFiskalService_DajAktivniProdCertifikatzaDan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajAktivniProdCertifikat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajAktivniProdCertifikat" message="tns:IFiskalService_DajAktivniProdCertifikat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajAktivniProdCertifikatResponse" message="tns:IFiskalService_DajAktivniProdCertifikat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajDrzave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajDrzave" message="tns:IFiskalService_DajDrzave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajDrzaveResponse" message="tns:IFiskalService_DajDrzave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajDrzavu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajDrzavu" message="tns:IFiskalService_DodajDrzavu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajDrzavuResponse" message="tns:IFiskalService_DodajDrzavu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniDrzavu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniDrzavu" message="tns:IFiskalService_IzmjeniDrzavu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniDrzavuResponse" message="tns:IFiskalService_IzmjeniDrzavu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiDrzavu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiDrzavu" message="tns:IFiskalService_ObrisiDrzavu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiDrzavuResponse" message="tns:IFiskalService_ObrisiDrzavu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajPosteZa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajPosteZa" message="tns:IFiskalService_DajPosteZa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajPosteZaResponse" message="tns:IFiskalService_DajPosteZa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajPosteSve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajPosteSve" message="tns:IFiskalService_DajPosteSve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajPosteSveResponse" message="tns:IFiskalService_DajPosteSve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajPostePoBroju">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajPostePoBroju" message="tns:IFiskalService_DajPostePoBroju_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajPostePoBrojuResponse" message="tns:IFiskalService_DajPostePoBroju_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajPostu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajPostu" message="tns:IFiskalService_DodajPostu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajPostuResponse" message="tns:IFiskalService_DodajPostu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniPostu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniPostu" message="tns:IFiskalService_IzmjeniPostu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniPostuResponse" message="tns:IFiskalService_IzmjeniPostu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPostu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiPostu" message="tns:IFiskalService_ObrisiPostu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiPostuResponse" message="tns:IFiskalService_ObrisiPostu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajPoslovneProstoreZa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajPoslovneProstoreZa" message="tns:IFiskalService_DajPoslovneProstoreZa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajPoslovneProstoreZaResponse" message="tns:IFiskalService_DajPoslovneProstoreZa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajPoslovneProstoreSve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajPoslovneProstoreSve" message="tns:IFiskalService_DajPoslovneProstoreSve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajPoslovneProstoreSveResponse" message="tns:IFiskalService_DajPoslovneProstoreSve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajPoslovneProstoreVlasnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajPoslovneProstoreVlasnika" message="tns:IFiskalService_DajPoslovneProstoreVlasnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajPoslovneProstoreVlasnikaResponse" message="tns:IFiskalService_DajPoslovneProstoreVlasnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajPoslovniProstor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajPoslovniProstor" message="tns:IFiskalService_DodajPoslovniProstor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajPoslovniProstorResponse" message="tns:IFiskalService_DodajPoslovniProstor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniPoslovniProstor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniPoslovniProstor" message="tns:IFiskalService_IzmjeniPoslovniProstor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniPoslovniProstorResponse" message="tns:IFiskalService_IzmjeniPoslovniProstor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPoslovniProstor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiPoslovniProstor" message="tns:IFiskalService_ObrisiPoslovniProstor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiPoslovniProstorResponse" message="tns:IFiskalService_ObrisiPoslovniProstor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRadnoVrijemeZa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRadnoVrijemeZa" message="tns:IFiskalService_DajRadnoVrijemeZa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRadnoVrijemeZaResponse" message="tns:IFiskalService_DajRadnoVrijemeZa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRadnoVrijemeSve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRadnoVrijemeSve" message="tns:IFiskalService_DajRadnoVrijemeSve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRadnoVrijemeSveResponse" message="tns:IFiskalService_DajRadnoVrijemeSve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRadnoVrijemeProstora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRadnoVrijemeProstora" message="tns:IFiskalService_DajRadnoVrijemeProstora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRadnoVrijemeProstoraResponse" message="tns:IFiskalService_DajRadnoVrijemeProstora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajRadnoVrijeme">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajRadnoVrijeme" message="tns:IFiskalService_DodajRadnoVrijeme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajRadnoVrijemeResponse" message="tns:IFiskalService_DodajRadnoVrijeme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniRadnoVrijeme">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniRadnoVrijeme" message="tns:IFiskalService_IzmjeniRadnoVrijeme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniRadnoVrijemeResponse" message="tns:IFiskalService_IzmjeniRadnoVrijeme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRadnoVrijeme">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRadnoVrijeme" message="tns:IFiskalService_ObrisiRadnoVrijeme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRadnoVrijemeResponse" message="tns:IFiskalService_ObrisiRadnoVrijeme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRadnoVrijemeZaPoslProst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRadnoVrijemeZaPoslProst" message="tns:IFiskalService_ObrisiRadnoVrijemeZaPoslProst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRadnoVrijemeZaPoslProstResponse" message="tns:IFiskalService_ObrisiRadnoVrijemeZaPoslProst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRacuneTransakcijeZa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRacuneTransakcijeZa" message="tns:IFiskalService_DajRacuneTransakcijeZa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRacuneTransakcijeZaResponse" message="tns:IFiskalService_DajRacuneTransakcijeZa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRacuneTransakcijeSve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRacuneTransakcijeSve" message="tns:IFiskalService_DajRacuneTransakcijeSve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRacuneTransakcijeSveResponse" message="tns:IFiskalService_DajRacuneTransakcijeSve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRacuneTransakcijeZaBRRAC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRacuneTransakcijeZaBRRAC" message="tns:IFiskalService_DajRacuneTransakcijeZaBRRAC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRacuneTransakcijeZaBRRACResponse" message="tns:IFiskalService_DajRacuneTransakcijeZaBRRAC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajRacunTransakcije">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajRacunTransakcije" message="tns:IFiskalService_DodajRacunTransakcije_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajRacunTransakcijeResponse" message="tns:IFiskalService_DodajRacunTransakcije_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniRacunTransakcije">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniRacunTransakcije" message="tns:IFiskalService_IzmjeniRacunTransakcije_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniRacunTransakcijeResponse" message="tns:IFiskalService_IzmjeniRacunTransakcije_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRacunTransakcije">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRacunTransakcije" message="tns:IFiskalService_ObrisiRacunTransakcije_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRacunTransakcijeResponse" message="tns:IFiskalService_ObrisiRacunTransakcije_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRacunXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRacunXML" message="tns:IFiskalService_DajRacunXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRacunXMLResponse" message="tns:IFiskalService_DajRacunXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajRacunXMLPoRacunu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajRacunXMLPoRacunu" message="tns:IFiskalService_DajRacunXMLPoRacunu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajRacunXMLPoRacunuResponse" message="tns:IFiskalService_DajRacunXMLPoRacunu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajRacunXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajRacunXML" message="tns:IFiskalService_DodajRacunXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajRacunXMLResponse" message="tns:IFiskalService_DodajRacunXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniRacunXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniRacunXML" message="tns:IFiskalService_IzmjeniRacunXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniRacunXMLResponse" message="tns:IFiskalService_IzmjeniRacunXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRacunXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRacunXML" message="tns:IFiskalService_ObrisiRacunXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRacunXMLResponse" message="tns:IFiskalService_ObrisiRacunXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRacunXMLzaRacun">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRacunXMLzaRacun" message="tns:IFiskalService_ObrisiRacunXMLzaRacun_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiRacunXMLzaRacunResponse" message="tns:IFiskalService_ObrisiRacunXMLzaRacun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajVlasnikeZa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajVlasnikeZa" message="tns:IFiskalService_DajVlasnikeZa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajVlasnikeZaResponse" message="tns:IFiskalService_DajVlasnikeZa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajVlasnikeSve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajVlasnikeSve" message="tns:IFiskalService_DajVlasnikeSve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajVlasnikeSveResponse" message="tns:IFiskalService_DajVlasnikeSve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajVlasnikeZaOIB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajVlasnikeZaOIB" message="tns:IFiskalService_DajVlasnikeZaOIB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajVlasnikeZaOIBResponse" message="tns:IFiskalService_DajVlasnikeZaOIB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajVlasnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DodajVlasnika" message="tns:IFiskalService_DodajVlasnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DodajVlasnikaResponse" message="tns:IFiskalService_DodajVlasnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniVlasnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniVlasnika" message="tns:IFiskalService_IzmjeniVlasnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/IzmjeniVlasnikaResponse" message="tns:IFiskalService_IzmjeniVlasnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVlasnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/ObrisiVlasnika" message="tns:IFiskalService_ObrisiVlasnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/ObrisiVlasnikaResponse" message="tns:IFiskalService_ObrisiVlasnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajTipOsobeZa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajTipOsobeZa" message="tns:IFiskalService_DajTipOsobeZa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajTipOsobeZaResponse" message="tns:IFiskalService_DajTipOsobeZa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajTipOsobeSve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajTipOsobeSve" message="tns:IFiskalService_DajTipOsobeSve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajTipOsobeSveResponse" message="tns:IFiskalService_DajTipOsobeSve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajZki">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/DajZki" message="tns:IFiskalService_DajZki_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/DajZkiResponse" message="tns:IFiskalService_DajZki_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FiskalizirajRacunSVE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/FiskalizirajRacunSVE" message="tns:IFiskalService_FiskalizirajRacunSVE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/FiskalizirajRacunSVEResponse" message="tns:IFiskalService_FiskalizirajRacunSVE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FiskalizirajRacun1pdv">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/FiskalizirajRacun1pdv" message="tns:IFiskalService_FiskalizirajRacun1pdv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/FiskalizirajRacun1pdvResponse" message="tns:IFiskalService_FiskalizirajRacun1pdv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrijaviPoslovniProstor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/PrijaviPoslovniProstor" message="tns:IFiskalService_PrijaviPoslovniProstor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/PrijaviPoslovniProstorResponse" message="tns:IFiskalService_PrijaviPoslovniProstor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrijaviPoslovniProstorP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/PrijaviPoslovniProstorP" message="tns:IFiskalService_PrijaviPoslovniProstorP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/PrijaviPoslovniProstorPResponse" message="tns:IFiskalService_PrijaviPoslovniProstorP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XPSendSoapMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFiskalService/XPSendSoapMessage" message="tns:IFiskalService_XPSendSoapMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFiskalService/XPSendSoapMessageResponse" message="tns:IFiskalService_XPSendSoapMessage_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFiskalService" type="tns:IFiskalService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SpremiGresku">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/SpremiGresku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajCertifikate">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajCertifikate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajCertifikat">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajCertifikat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniCertifikat">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniCertifikat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiCertifikat">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiCertifikat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajAktivniCertifikat">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajAktivniCertifikat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajAktivniProdCertifikatzaDan">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajAktivniProdCertifikatzaDan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajAktivniProdCertifikat">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajAktivniProdCertifikat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajDrzave">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajDrzave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajDrzavu">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajDrzavu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniDrzavu">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniDrzavu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiDrzavu">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiDrzavu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajPosteZa">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajPosteZa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajPosteSve">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajPosteSve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajPostePoBroju">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajPostePoBroju" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajPostu">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajPostu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniPostu">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniPostu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPostu">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiPostu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajPoslovneProstoreZa">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajPoslovneProstoreZa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajPoslovneProstoreSve">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajPoslovneProstoreSve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajPoslovneProstoreVlasnika">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajPoslovneProstoreVlasnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajPoslovniProstor">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajPoslovniProstor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniPoslovniProstor">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniPoslovniProstor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPoslovniProstor">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiPoslovniProstor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRadnoVrijemeZa">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRadnoVrijemeZa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRadnoVrijemeSve">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRadnoVrijemeSve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRadnoVrijemeProstora">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRadnoVrijemeProstora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajRadnoVrijeme">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajRadnoVrijeme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniRadnoVrijeme">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniRadnoVrijeme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRadnoVrijeme">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiRadnoVrijeme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRadnoVrijemeZaPoslProst">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiRadnoVrijemeZaPoslProst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRacuneTransakcijeZa">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRacuneTransakcijeZa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRacuneTransakcijeSve">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRacuneTransakcijeSve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRacuneTransakcijeZaBRRAC">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRacuneTransakcijeZaBRRAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajRacunTransakcije">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajRacunTransakcije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniRacunTransakcije">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniRacunTransakcije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRacunTransakcije">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiRacunTransakcije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRacunXML">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRacunXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajRacunXMLPoRacunu">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajRacunXMLPoRacunu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajRacunXML">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajRacunXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniRacunXML">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniRacunXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRacunXML">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiRacunXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRacunXMLzaRacun">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiRacunXMLzaRacun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajVlasnikeZa">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajVlasnikeZa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajVlasnikeSve">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajVlasnikeSve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajVlasnikeZaOIB">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajVlasnikeZaOIB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajVlasnika">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DodajVlasnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjeniVlasnika">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/IzmjeniVlasnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVlasnika">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/ObrisiVlasnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajTipOsobeZa">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajTipOsobeZa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajTipOsobeSve">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajTipOsobeSve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajZki">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/DajZki" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiskalizirajRacunSVE">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/FiskalizirajRacunSVE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiskalizirajRacun1pdv">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/FiskalizirajRacun1pdv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrijaviPoslovniProstor">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/PrijaviPoslovniProstor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrijaviPoslovniProstorP">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/PrijaviPoslovniProstorP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XPSendSoapMessage">
+      <soap:operation soapAction="http://tempuri.org/IFiskalService/XPSendSoapMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FiskalService">
+    <wsdl:port name="BasicHttpBinding_IFiskalService" binding="tns:BasicHttpBinding_IFiskalService">
+      <soap:address location="http://fiskalizacija.ri-ing.net/FiskalService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

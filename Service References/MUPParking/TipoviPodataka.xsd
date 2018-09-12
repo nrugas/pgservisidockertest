@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://MUP.Parking/Tipovi" elementFormDefault="qualified" targetNamespace="http://MUP.Parking/Tipovi" id="TipoviPodataka" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="OIB">
+    <xs:restriction base="xs:string">
+      <xs:length value="11" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Indikator">
+    <xs:annotation>
+      <xs:documentation>
+        ako se radi o vlasniku vozila ide slovo "V", dok u slučaju korisnika ide slovo "K"
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RegOznaka">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Teks32">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Teks64">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Teks72">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="72" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Teks128">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="128" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

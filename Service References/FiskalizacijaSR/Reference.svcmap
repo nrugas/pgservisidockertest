@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="76e3802d-a605-4ae4-809e-6c32c8c35f56" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://fiskalizacija.ri-ing.net/FiskalService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FiskalService.xsd" MetadataType="Schema" ID="c7ffaba3-75fa-474b-ac71-35026fdb3f1f" SourceId="1" SourceUrl="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FiskalService.disco" MetadataType="Disco" ID="f842731e-814c-4a2e-a54e-a06e81a8993b" SourceId="1" SourceUrl="http://fiskalizacija.ri-ing.net/FiskalService.svc?disco" />
+    <MetadataFile FileName="FiskalService1.xsd" MetadataType="Schema" ID="ef2c14ad-e117-404f-b4da-fed8b5328421" SourceId="1" SourceUrl="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FiskalService2.xsd" MetadataType="Schema" ID="6f234f40-0ca6-4650-bfc8-0fe594eacfac" SourceId="1" SourceUrl="http://fiskalizacija.ri-ing.net/FiskalService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FiskalService.wsdl" MetadataType="Wsdl" ID="6c397856-c41b-4f6b-973b-ce48ca1ebf66" SourceId="1" SourceUrl="http://fiskalizacija.ri-ing.net/FiskalService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

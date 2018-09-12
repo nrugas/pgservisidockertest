@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b268ce0d-c58b-4cc5-b4ac-ebb0d38eae6f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://85.114.62.234:30102/services/Positionservice" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PositionService.xsd" MetadataType="Schema" ID="93a1374f-9385-4e11-ade5-dd8cdb358ac6" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?xsd=xsd3" />
+    <MetadataFile FileName="PositionService1.xsd" MetadataType="Schema" ID="e16d110d-85b8-4afd-b6a9-c66ac89315e4" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?xsd=xsd4" />
+    <MetadataFile FileName="PositionService2.xsd" MetadataType="Schema" ID="772cd65a-fb11-4d25-ada5-cd369119068a" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?xsd=xsd0" />
+    <MetadataFile FileName="PositionService.wsdl" MetadataType="Wsdl" ID="0eae2eb9-27a8-45ee-b506-014060238d6b" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?wsdl=wsdl0" />
+    <MetadataFile FileName="PositionService.disco" MetadataType="Disco" ID="a879af2e-4a74-4690-910f-c121942fd903" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?disco" />
+    <MetadataFile FileName="PositionService3.xsd" MetadataType="Schema" ID="81587b94-c097-4a22-b518-48bcb558ca15" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?xsd=xsd2" />
+    <MetadataFile FileName="PositionService4.xsd" MetadataType="Schema" ID="c3b7d842-20ea-4914-a707-31818eea0470" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?xsd=xsd1" />
+    <MetadataFile FileName="PositionService1.wsdl" MetadataType="Wsdl" ID="9bdcd662-2e50-4484-a0ab-2f694785a3cb" SourceId="1" SourceUrl="http://85.114.62.234:30102/services/PositionService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

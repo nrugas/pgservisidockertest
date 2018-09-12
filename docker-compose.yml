@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pg.servisi:
+    image: ${DOCKER_REGISTRY}pgservisi
+    build:
+      context: .
+      dockerfile: Dockerfile

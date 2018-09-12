@@ -1,0 +1,634 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Newsletter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        #outlook a {
+            padding: 0;
+        }
+        /* Force Outlook to provide a "view in browser" message */
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+            /* Force Hotmail to display emails at full width */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+        /* Force Hotmail to display normal line spacing */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        /* Prevent WebKit and Windows mobile changing default text sizes */
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        /* Remove spacing between tables in Outlook 2007 and up */
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* RESET STYLES */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        .button {
+            color: #333333 !important;
+            background-color: #fcdb03 !important;
+            border-top: 10px solid #fcdb03 !important;
+            border-bottom: 10px solid #fcdb03 !important;
+            border-left: 20px solid #fcdb03 !important;
+            border-right: 20px solid #fcdb03;
+        }
+
+        /* MOBILE STYLES */
+        @media screen and (max-width: 525px) {
+
+            /* ALLOWS FOR FLUID TABLES */
+            table[class="wrapper"] {
+                width: 100% !important;
+            }
+
+            /* ADJUSTS LAYOUT OF LOGO IMAGE */
+            td[class="logo"] {
+                text-align: left;
+                padding: 20px 0 20px 0 !important;
+            }
+
+                td[class="logo"] img {
+                    margin: 0 auto !important;
+                }
+
+            /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+            td[class="mobile-hide"] {
+                display: none;
+            }
+
+            img[class="mobile-hide"] {
+                display: none !important;
+            }
+
+            img[class="img-max"] {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            /* FULL-WIDTH TABLES */
+            table[class="responsive-table"] {
+                width: 100% !important;
+            }
+
+            /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+            td[class="padding"] {
+                padding: 10px 5% 15px 5% !important;
+            }
+
+            td[class="padding-copy"] {
+                padding: 10px 5% 10px 5% !important;
+                text-align: center;
+            }
+
+            td[class="padding-meta"] {
+                padding: 30px 5% 0px 5% !important;
+                text-align: center;
+            }
+
+            td[class="no-pad"] {
+                padding: 0 0 20px 0 !important;
+            }
+
+            td[class="no-padding"] {
+                padding: 0 !important;
+            }
+
+            td[class="section-padding"] {
+                padding: 50px 15px 50px 15px !important;
+            }
+
+            td[class="section-padding-bottom-image"] {
+                padding: 50px 15px 0 15px !important;
+            }
+
+            /* ADJUST BUTTONS ON MOBILE */
+            td[class="mobile-wrapper"] {
+                padding: 10px 5% 15px 5% !important;
+            }
+
+            table[class="mobile-button-container"] {
+                margin: 0 auto;
+                width: 100% !important;
+            }
+
+            a[class="mobile-button"] {
+                width: 80% !important;
+                padding: 15px !important;
+                border: 0 !important;
+                font-size: 16px !important;
+            }
+        }
+    </style>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body style="margin: 0; padding: 0;">
+    <!-- HEADER -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" data-id="header-01" class="tnpc-row ui-sortable-handle">
+        <tbody>
+            <tr>
+                <td bgcolor="#333333" class="edit-block">
+                    <div align="center" style="padding: 0px 15px 0px 15px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="500" class="wrapper">
+                            <!-- LOGO/PREHEADER TEXT -->
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 20px 0px 30px 0px;" class="logo">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100" align="left" class="tnpc-row-edit" data-type="image">
+                                                        <a href="#" target="_blank">
+                                                            <img alt="Logo" src="http://www.pariter.hr/wp-content/uploads/2014/11/logo-pariter-e1471462194408.png" style="display: block; width: 100px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
+                                                        </a>
+                                                    </td>
+                                                    <td width="400" align="right" class="mobile-hide">
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="right" style="padding: 0 0 5px 0; font-size: 14px; font-family: Arial, sans-serif; color: #666666; text-decoration: none;" class="tnpc-row-edit" data-type="text">
+                                                                        <span style="font-family: tahoma, arial, helvetica, sans-serif;"><strong><span style="color: #fcdb03; text-decoration: none; font-size: 12pt;">Udruga za ljudska prava i <br>građansku participaciju</span></strong></span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table><!-- ONE COLUMN SECTION -->
+    <!-- FOOTER -->
+    <!-- ONE COLUMN SECTION -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row ui-sortable-handle" data-id="content-02">
+        <tbody>
+            <tr>
+                <td bgcolor="#ffffff" align="center" style="padding: 15px; font-family: Helvetica, Arial, sans-serif;" class="section-padding edit-block">
+                    <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="font-size: 25px; color: #333333; padding-top: 30px;" class="padding-copy tnpc-row-edit" data-type="title">Naslov (ali ne preveliki)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table><!-- COMPACT ARTICLE SECTION -->
+    <!-- ONE COLUMN SECTION -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row" data-id="content-03">
+        <tbody>
+            <tr>
+                <td bgcolor="#ffffff" align="center" style="padding: 20px 15px 20px 15px; font-family: Helvetica, Arial, sans-serif;" class="section-padding edit-block">
+                    <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding: 0 0 0 0; font-size: 16px; line-height: 25px; color: #666666;" class="padding-copy tnpc-row-edit" data-type="text">
+                                    <div style="text-align: justify;"><em>The judge, by the way, was the King; and as he wore his crown over the wig, (look at the frontispiece if you want to see how he did it,) he did not look at all comfortable, and it was certainly not becoming.</em></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row tnpc-row-posts ui-sortable-handle" data-id="content-06" data-block="content-06-posts">
+        <tbody>
+            <!-- COMPACT ARTICLE SECTION -->
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row tnpc-row-posts ui-sortable-handle" data-id="content-06" data-block="content-06-posts" style="position: relative; left: 0px; top: 0px;">
+        <tbody>
+            <tr>
+                <td bgcolor="#E6E9ED" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding edit-block">
+                    <table border="0" cellpadding="0" cellspacing="0" width="500" style="padding:0 0 20px 0;" class="responsive-table">
+                        <!-- TITLE -->
+                        <tbody>
+                            <tr>
+                                <td align="center" style="padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding-copy tnpc-row-edit" data-type="title" colspan="2">From Our Blog</td>
+                            </tr>
+
+                            <tr>
+                                <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide tnpc-row-edit" data-type="image">
+                                    <a href="http://www.pariter.hr/?p=2885" target="_blank">
+                                        <img src="http://www.pariter.hr/wp-content/uploads/2016/06/FB-cover-Copy.jpg" width="105" height="105" border="0" style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;">
+                                    </a>
+                                </td>
+                                <td style="padding: 40px 0 0 0;" class="no-padding">
+                                    <!-- ARTICLE -->
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td align="left" style="padding: 0 0 5px 25px; font-size: 13px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #aaaaaa;" class="padding-meta">
+                                                    02/07/2016
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 0 0 5px 25px; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding-copy tnpc-row-edit" data-type="title">
+                                                    Eve Ensler: Solidarnost je sloboda
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy tnpc-row-edit" data-type="text">
+                                                    Prošla je još jedna iznimno uspješna godina One Billion Risinga, te smo vidjeli kako se energija ovog pokreta širi daleko. MI smo istkali puno veću priču, dublje povezali različite vrste…
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:0 0 45px 25px;" align="left" class="padding">
+                                                    <table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center">
+                                                                    <!-- BULLETPROOF BUTTON -->
+                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 0;" class="padding-copy">
+                                                                                    <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="center">
+                                                                                                    <a href="http://www.pariter.hr/?p=2885" target="_blank" style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; text-decoration: none; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;" class="mobile-button tnpc-row-edit button" data-type="link">Više →</a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide tnpc-row-edit" data-type="image">
+                                    <a href="http://www.pariter.hr/?p=2728" target="_blank">
+                                        <img src="http://www.pariter.hr/wp-content/uploads/2016/05/MajcinaIgra_Porec-Kopiraj.jpg" width="105" height="105" border="0" style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;">
+                                    </a>
+                                </td>
+                                <td style="padding: 40px 0 0 0;" class="no-padding">
+                                    <!-- ARTICLE -->
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td align="left" style="padding: 0 0 5px 25px; font-size: 13px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #aaaaaa;" class="padding-meta">
+                                                    28/05/2016
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 0 0 5px 25px; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding-copy tnpc-row-edit" data-type="title">
+                                                    Naše zdravlje. Naša prava. Naši životi!
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy tnpc-row-edit" data-type="text">
+                                                    Skupina feminističkih udruga i inicijativa je gerila akcijom obilježila Međunarodni dan akcije za žensko zdravlje kako bi ukazale na činjenicu da je žensko reproduktivno zdravlje puno više od prava na…
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:0 0 45px 25px;" align="left" class="padding">
+                                                    <table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center">
+                                                                    <!-- BULLETPROOF BUTTON -->
+                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 0;" class="padding-copy">
+                                                                                    <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="center">
+                                                                                                    <a href="http://www.pariter.hr/?p=2728" target="_blank" style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; text-decoration: none; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;" class="mobile-button tnpc-row-edit button" data-type="link">Više →</a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- TWO COLUMN SECTION -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row tnpc-row-posts ui-sortable-handle" data-id="content-07" data-block="content-07-twocols">
+        <tbody>
+            <!-- TWO COLUMN SECTION -->
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row tnpc-row-posts ui-sortable-handle" data-id="content-07" data-block="content-07-twocols">
+        <tbody>
+            <tr>
+                <td bgcolor="#F5F7FA" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding edit-block">
+                    <table border="0" cellpadding="0" cellspacing="0" width="500" class="responsive-table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <!-- TITLE SECTION AND COPY -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333;" class="padding-copy tnpc-row-edit" data-type="title">Great News!</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding: 20px 0 20px 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy tnpc-row-edit" data-type="text">The twelve jurors were all writing very busily on slates.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- TWO COLUMNS -->
+                                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+
+                                        <tbody>
+                                            <tr>
+                                                <td valign="top" style="padding: 0;" class="mobile-wrapper">
+
+                                                    <!-- LEFT COLUMN -->
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="47%" align="left" class="responsive-table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding: 20px 0 40px 0;">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" bgcolor="#F5F7FA" valign="middle" class="tnpc-row-edit" data-type="image">
+                                                                                    <a href="http://www.pariter.hr/?p=3033" target="_blank">
+                                                                                        <img src="http://www.pariter.hr/wp-content/uploads/2016/08/koli-Kopiraj.png" width="240" height="160" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 13px; width: 240px; height: 160px;" border="0" class="img-max">
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 15px 0 0 0; font-family: Arial, sans-serif; color: #333333; font-size: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="title">EVS projekti u Finskoj</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="text">Traže se volonteri/ke za dva projekta u Finskoj. Prvi projekt je u Nacionalnom parku Koli i Centru Ukko, a drugi u Centru Vanhamäki u ruralnom mjestu Suonenjoki. Volonteri/ke će sudjelovati…</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA"><a href="http://www.pariter.hr/?p=3033" style="color: #256F9C; text-decoration: none;" class="tnpc-row-edit" data-type="link">Više →</a></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <!-- RIGHT COLUMN -->
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="47%" align="right" class="responsive-table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding: 20px 0 40px 0;">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" bgcolor="#F5F7FA" valign="middle" class="tnpc-row-edit" data-type="image">
+                                                                                    <a href="http://www.pariter.hr/?p=3017" target="_blank">
+                                                                                        <img src="http://www.pariter.hr/wp-content/uploads/2016/08/reykjavik_cnt_18nov09_iStock_b_1-Kopiraj-768x511.jpg" width="240" height="160" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 13px; width: 240px; height: 160px;" border="0" class="img-max">
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 15px 0 0 0; font-family: Arial, sans-serif; color: #333333; font-size: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="title">Eko osvještavanje na Islandu</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="text">Farfuglar ses - Hostelling International  Iceland iz Reykjavika traži volontere/ke za sudjelovanje u projektu "Green Hostels“ kojemu je cilj podizati svijest o održivosti. Volonteri/ke će raditi u internacionalnom okruženju što…</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA"><a href="http://www.pariter.hr/?p=3017" style="color: #256F9C; text-decoration: none;" class="tnpc-row-edit" data-type="link">Više →</a></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td valign="top" style="padding: 0;" class="mobile-wrapper">
+
+                                                    <!-- LEFT COLUMN -->
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="47%" align="left" class="responsive-table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding: 20px 0 40px 0;">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" bgcolor="#F5F7FA" valign="middle" class="tnpc-row-edit" data-type="image">
+                                                                                    <a href="http://www.pariter.hr/?p=3012" target="_blank">
+                                                                                        <img src="http://www.pariter.hr/wp-content/uploads/2016/08/6-Kopiraj.jpg" width="240" height="160" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 13px; width: 240px; height: 160px;" border="0" class="img-max">
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 15px 0 0 0; font-family: Arial, sans-serif; color: #333333; font-size: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="title">EVS u Muzeju emigracije</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="text">Muzej emigracije  iz grada Gdynia (Poljska) traži volontere/ke koji/e žele raditi u modernoj kulturnoj instituciji, organizirati različite događaje i obavljati zadatke koji ovise o trenutnom programu institucije. Projekt počinje u…</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA"><a href="http://www.pariter.hr/?p=3012" style="color: #256F9C; text-decoration: none;" class="tnpc-row-edit" data-type="link">Više →</a></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <!-- RIGHT COLUMN -->
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="47%" align="right" class="responsive-table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding: 20px 0 40px 0;">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" bgcolor="#F5F7FA" valign="middle" class="tnpc-row-edit" data-type="image">
+                                                                                    <a href="http://www.pariter.hr/?p=3003" target="_blank">
+                                                                                        <img src="http://www.pariter.hr/wp-content/uploads/2016/08/innsbruck-tirol-202mo-Kopiraj.jpg" width="240" height="160" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 13px; width: 240px; height: 160px;" border="0" class="img-max">
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 15px 0 0 0; font-family: Arial, sans-serif; color: #333333; font-size: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="title">Podrška starijim osobama</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA" class="tnpc-row-edit" data-type="text">Seniorenresidenz Veldidenapark iz Austrije traži motivirane volonterke koje bi radile sa starijim osobama te žele naučiti više o njihovom životu. Zadatci će uključivati sudjelovanje u svakodnevnim aktivnostima centra, rekreacijskim aktivnostima…</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;" bgcolor="#F5F7FA"><a href="http://www.pariter.hr/?p=3003" style="color: #256F9C; text-decoration: none;" class="tnpc-row-edit" data-type="link">Više →</a></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row ui-sortable-handle" data-id="footer-01">
+        <tbody>
+            <tr>
+                <td bgcolor="#ffffff" align="center" style="padding: 20px 0px;" class="edit-block">
+                    <!-- UNSUBSCRIBE COPY -->
+                    <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
+                                    <div class="tnpc-row-edit" data-type="text" style="color:#666666;">
+                                        <span style="font-size: 12pt;">Udruga PaRiter</span><br><span style="font-size: 12pt;"> Janeza Trdine 2, Rijeka</span><br><br>
+                                        <div style="text-align: justify;"><em>Tekstovi na portalu ne izražavaju mišljenje i stavove Udruge Pariter, već isključivo mišljenje i stavove njihovih autora/autorica. Ustupljeno pod Creative Commons licencom Imenovanje - Dijeli pod istim uvjetima 3.0 Croatia. Tekstove objavljene na Udrugapariter.hr-u možete slobodno kopirati, prenositi i uređivati uz obavezno jasno istaknuto ime autora/ice i izvor članka te uz uvjet da ga potom sami ne zaštićujete autorskim pravom.</em></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <!-- SOCIAL -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row ui-sortable-handle" data-id="footer-03">
+        <tbody>
+            <tr>
+                <td bgcolor="#ffffff" align="center" style="padding: 20px 0px;" class="edit-block">
+                    <!-- UNSUBSCRIBE COPY -->
+                    <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
+                                    <span class="tnpc-row-edit" data-type="image">
+                                        <a href="https://www.facebook.com/udrugapariter/?fref=ts"><img src="http://www.pariter.hr/wp-content/plugins/newsletter/emails/themes/default/images/facebook.png" alt=""></a>
+                                    </span>
+                                    <span class="tnpc-row-edit" data-type="image">
+                                        <a href="https://twitter.com/UdrugaPariter"><img src="http://www.pariter.hr/wp-content/plugins/newsletter/emails/themes/default/images/twitter.png" alt="Twitter"></a>
+                                    </span>
+                                    <span class="tnpc-row-edit" data-type="image">
+                                        <a href="https://www.youtube.com/channel/UCt8oIJWRyq0Ph1pGMp-3u4Q"><img src="http://www.pariter.hr/wp-content/plugins/newsletter/emails/themes/default/images/youtube.png" alt="Youtube"></a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row ui-sortable-handle" data-id="footer-02">
+        <tbody>
+            <tr>
+                <td bgcolor="#ffffff" align="center" style="padding: 20px 0px;" class="edit-block">
+                    <!-- UNSUBSCRIBE COPY -->
+                    <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+                        <tbody>
+                            <tr>
+                                <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
+                                    <a class="original-only tnpc-row-edit" data-type="link" style="color: #666666; text-decoration: none;" href="{unsubscription_url}">Ukoliko ste greškom prijavljeni ili ne želite više primati newsletter, molimo vas da se odjavite.</a>
+                                    <span class="original-only" style="font-family: Arial, sans-serif; font-size: 12px; color: #444444;">   |   </span>
+                                    <a style="color: #666666; text-decoration: none;" href="{email_url}" class="tnpc-row-edit" data-type="link">Ukoliko imate poteškoća pogledajte newsletter online</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+</body>
+</html>

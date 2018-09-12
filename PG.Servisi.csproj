@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A383751F-BF3D-4530-AFBD-617E7BEAA60B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PG.Servisi</RootNamespace>
+    <AssemblyName>PG.Servisi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <DockerComposeProjectPath>docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExifLib, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>resources\dll\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>resources\dll\pdf\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenAlprApi">
+      <HintPath>..\..\..\..\..\Desktop\OpenAlprApi.dll</HintPath>
+    </Reference>
+    <Reference Include="PG.Reports, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PG.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Reporting, Version=12.1.18.620, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik Reporting R2 2018\Bin\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="PGAdministracija.svc" />
+    <Content Include="PGGO.svc" />
+    <Content Include="PGMobile.svc" />
+    <Content Include="PGMup.svc" />
+    <Content Include="PGNadzor.svc" />
+    <Content Include="PGNet.svc" />
+    <Content Include="PGOdvjetnici.svc" />
+    <Content Include="PGOprema.svc" />
+    <Content Include="PGParking.svc" />
+    <Content Include="PGPauk.svc" />
+    <Content Include="PGStatistika.svc" />
+    <Content Include="resources\dll\ExifLib.dll" />
+    <Content Include="resources\dll\lpr\OpenAlprApi.dll" />
+    <Content Include="resources\dll\lpr\OpenAlprApi.pdb" />
+    <Content Include="resources\dll\lpr\RestSharp.dll" />
+    <Content Include="resources\dll\pdf\itextsharp.dll" />
+    <Resource Include="resources\dll\pdf\iTextSharp.xml" />
+    <Content Include="resources\images\backgrounds\HUB3aM.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\backgrounds\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\backgrounds\logo_splash.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\backgrounds\mup.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\backgrounds\narudzba.jpg" />
+    <Content Include="resources\images\backgrounds\oko.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\images\backgrounds\pitanje.jpg" />
+    <Content Include="resources\images\backgrounds\pozadina.jpg" />
+    <Content Include="resources\images\backgrounds\RIINGNET.png" />
+    <Content Include="resources\pdf\temp\tektolko.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\Prijenos.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\NovaJLS.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\NarudzbaMaterijalaPauk.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\Naredba.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\PorukaDobrodoslice.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\IzmjenaLozinke.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\NarudzbaMaterijala.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\PitanjeZahtjev.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\templates\PrijavaProblema.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <None Include="Properties\PublishProfiles\Development server.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Produkcija.pubxml" />
+    <None Include="Properties\PublishProfiles\RI-ING NET debug server.pubxml" />
+    <Content Include="RESTApi\RegistarskeOznake.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\FiskalizacijaSR\FiskalService.wsdl" />
+    <None Include="Service References\FiskalizacijaSR\FiskalService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FiskalizacijaSR\FiskalService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FiskalizacijaSR\FiskalService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._Certifikat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._DajCertifikat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._Drzava.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._FiskalOdgovor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._PoslovniProstor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._Posta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._RacunTransakcija.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._RacunXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._RadnoVrijeme.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._TipOsobe.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._Vlasnik.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FiskalizacijaSR\PG.Servisi.FiskalizacijaSR._ZkiOdgovor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\GOService\GOPazigrad.wsdl" />
+    <None Include="Service References\GOService\GOPazigrad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GOService\GOPazigrad1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GOService\GOPazigrad2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GOService\GOPazigrad3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FiskalizacijaSR\FiskalService.disco" />
+    <None Include="Service References\FiskalizacijaSR\configuration91.svcinfo" />
+    <None Include="Service References\FiskalizacijaSR\configuration.svcinfo" />
+    <None Include="Service References\FiskalizacijaSR\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\GOService\PG.Servisi.GOService._3DLista.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GOService\PG.Servisi.GOService._2DLista.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\MUPParking\MUP.Parking.wsdl" />
+    <None Include="Service References\MUPParking\MUP.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MUPParking\MUP1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MUPParking\MUP2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GOService\GOPazigrad.disco" />
+    <None Include="Service References\GOService\configuration91.svcinfo" />
+    <None Include="Service References\GOService\configuration.svcinfo" />
+    <None Include="Service References\GOService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\MUPParking\PG.Servisi.MUPParking.Odgovor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MUPParking\PG.Servisi.MUPParking.VoziloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\MUPParking\TipoviPodataka.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MUPParking\configuration91.svcinfo" />
+    <None Include="Service References\MUPParking\configuration.svcinfo" />
+    <None Include="Service References\MUPParking\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Blokiran.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.CentralnaLokacija.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.DajPorukuRedaruResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.DeblokirajVoziloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Djelatnik.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GetNoviRacunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GetParametriAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GetPrekrsajeRegistracijeNoviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GetPrintDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GetSektoriZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GetSlikaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GOGrupa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.GOPredmet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.LicencePlateRecognitionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.LicencePlateRecognitionWithAnglesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.NalogPauku.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.NaplatiPrekrsajResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.NaplatiSaFiskalizacijomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.NaplativoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.NeobradjeniZahtjeviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.NoviPredmetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.PaukPrijava.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.PodaciOpazanje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.PodaciPrekrsajPC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Postupanje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.PozicijaDjelatnika.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.PrekrsajPC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.PreuzeoZahtjevResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Printer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.ProvjeriBrojNaUplatniciResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.ProvjeriOpazanjeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.RazlogUzStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Sektor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SendPositionPaukaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SendPositionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SendPositionsPaukaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SetInfoGetVerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SetInfoGetVerSMSNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SetInfoGetVerSMSNumWithCredentialsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SpremiLogNoviResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.SpremiPrekrsajResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.StatusZahtjevaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.TekuciNalogIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Terminal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.UlicaUdaljenost.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Vozilo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.VrstaPlacanja.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.ZahtjevZaPremjestanjeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PazigradPCService\PG.Servisi.PazigradPCService.Zona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PazigradPCService\PositionService.disco" />
+    <None Include="Service References\PazigradPCService\configuration91.svcinfo" />
+    <None Include="Service References\PazigradPCService\configuration.svcinfo" />
+    <None Include="Service References\PazigradPCService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IPGAdministracija.cs" />
+    <Compile Include="IPGGO.cs" />
+    <Compile Include="IPGMobile.cs" />
+    <Compile Include="IPGMup.cs" />
+    <Compile Include="IPGNadzor.cs" />
+    <Compile Include="IPGNet.cs" />
+    <Compile Include="IPGOdvjetnici.cs" />
+    <Compile Include="IPGOprema.cs" />
+    <Compile Include="IPGParking.cs" />
+    <Compile Include="IPGPauk.cs" />
+    <Compile Include="IPGStatistika.cs" />
+    <Compile Include="PGAdministracija.svc.cs">
+      <DependentUpon>PGAdministracija.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGGO.svc.cs">
+      <DependentUpon>PGGO.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGMobile.svc.cs">
+      <DependentUpon>PGMobile.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGMup.svc.cs">
+      <DependentUpon>PGMup.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGNadzor.svc.cs">
+      <DependentUpon>PGNadzor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGNet.svc.cs">
+      <DependentUpon>PGNet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGOdvjetnici.svc.cs">
+      <DependentUpon>PGOdvjetnici.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGOprema.svc.cs">
+      <DependentUpon>PGOprema.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGParking.svc.cs">
+      <DependentUpon>PGParking.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGPauk.svc.cs">
+      <DependentUpon>PGPauk.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PGStatistika.svc.cs">
+      <DependentUpon>PGStatistika.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="resources\cs\email\Posalji.cs" />
+    <Compile Include="resources\cs\email\Pripremi.cs" />
+    <Compile Include="resources\cs\email\SlanjeSMS.cs" />
+    <Compile Include="resources\cs\Geocoordinates.cs" />
+    <Compile Include="resources\cs\ispis\ByteCollection.cs" />
+    <Compile Include="resources\cs\ispis\HrCharConverter.cs" />
+    <Compile Include="resources\cs\ispis\Jezik.cs" />
+    <Compile Include="resources\cs\ispis\ObradjivanjePodataka.cs" />
+    <Compile Include="resources\cs\KontrolniBroj.cs" />
+    <Compile Include="resources\cs\sigurnost\CustomUserNameAndPasswordValidator.cs" />
+    <Compile Include="resources\cs\sigurnost\EncryptDecrypt.cs" />
+    <Compile Include="resources\cs\Sistem.cs" />
+    <Compile Include="resources\cs\Slike.cs" />
+    <Compile Include="resources\pdf\CreatePDF.cs" />
+    <Compile Include="resources\podaci\baze\GO.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GO.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\podaci\baze\GO_GRAD.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GO_GRAD.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\podaci\baze\Pazigrad.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pazigrad.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\podaci\baze\Postavke.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Postavke.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\podaci\upiti\AutopilotPauk.cs" />
+    <Compile Include="resources\podaci\upiti\_Financije.cs" />
+    <Compile Include="resources\podaci\upiti\Fiskalizacija.cs" />
+    <Compile Include="resources\podaci\upiti\GO.cs" />
+    <Compile Include="resources\podaci\upiti\Gradovi.cs" />
+    <Compile Include="resources\podaci\upiti\Ispis.cs" />
+    <Compile Include="resources\podaci\upiti\Korisnici.cs" />
+    <Compile Include="resources\podaci\upiti\Chat.cs" />
+    <Compile Include="resources\podaci\upiti\MailLista.cs" />
+    <Compile Include="resources\podaci\upiti\Mapa.cs" />
+    <Compile Include="resources\podaci\upiti\Mobile.cs" />
+    <Compile Include="resources\podaci\upiti\Nalog.cs" />
+    <Compile Include="resources\podaci\upiti\Naplata.cs" />
+    <Compile Include="resources\podaci\upiti\Net.cs" />
+    <Compile Include="resources\podaci\upiti\Odvjetnici.cs" />
+    <Compile Include="resources\podaci\upiti\Oprema.cs" />
+    <Compile Include="resources\podaci\upiti\Osobe.cs" />
+    <Compile Include="resources\podaci\upiti\Parking.cs" />
+    <Compile Include="resources\podaci\upiti\Posade.cs" />
+    <Compile Include="resources\podaci\upiti\PoslovniProstor.cs" />
+    <Compile Include="resources\podaci\upiti\Prijenos.cs" />
+    <Compile Include="resources\podaci\upiti\RentaCar.cs" />
+    <Compile Include="resources\podaci\upiti\Spider.cs" />
+    <Compile Include="resources\podaci\upiti\Postavke.cs" />
+    <Compile Include="resources\podaci\upiti\Predlosci.cs" />
+    <Compile Include="resources\podaci\upiti\Prekrsaj.cs" />
+    <Compile Include="resources\podaci\upiti\Pretraga.cs" />
+    <Compile Include="resources\podaci\upiti\Priprema.cs" />
+    <Compile Include="resources\podaci\upiti\Statistika.cs" />
+    <Compile Include="resources\podaci\upiti\Sustav.cs" />
+    <Compile Include="resources\podaci\upiti\VanjskaPrijava.cs" />
+    <Compile Include="resources\podaci\upiti\Vozila.cs" />
+    <Compile Include="resources\podaci\upiti\Vpp.cs" />
+    <Compile Include="resources\podaci\upiti\Zahtjev.cs" />
+    <Compile Include="resources\podaci\upiti\Zakoni.cs" />
+    <Compile Include="RESTApi\BixolonESC.cs" />
+    <Compile Include="RESTApi\DnevnaKartaController.cs" />
+    <Compile Include="RESTApi\DrzaveController.cs" />
+    <Compile Include="RESTApi\LoginController.cs" />
+    <Compile Include="RESTApi\LokacijeController.cs" />
+    <Compile Include="RESTApi\LPRNoviController.cs" />
+    <Compile Include="RESTApi\LPRController.cs" />
+    <Compile Include="RESTApi\Methods.cs" />
+    <Compile Include="RESTApi\OdobrenjeController.cs" />
+    <Compile Include="RESTApi\OpazanjaController.cs" />
+    <Compile Include="RESTApi\Opazanje.cs" />
+    <Compile Include="RESTApi\OpenALRPApi.cs" />
+    <Compile Include="RESTApi\PlateDefinition.cs" />
+    <Compile Include="RESTApi\PrijavaController.cs" />
+    <Compile Include="RESTApi\PrinteriController.cs" />
+    <Compile Include="RESTApi\ProbaController.cs" />
+    <Compile Include="RESTApi\SektoriController.cs" />
+    <Compile Include="RESTApi\SlikeController.cs" />
+    <Compile Include="RESTApi\TestController.cs" />
+    <Compile Include="RESTApi\UliceController.cs" />
+    <Compile Include="RESTApi\VrstePlacanjaController.cs" />
+    <Compile Include="RESTApi_prometno\DrzavePrometnoController.cs" />
+    <Compile Include="RESTApi_prometno\IspisiController.cs" />
+    <Compile Include="RESTApi_prometno\LoginPrometnoController.cs" />
+    <Compile Include="RESTApi_prometno\LokacijePrometnoController.cs" />
+    <Compile Include="RESTApi_prometno\LPRPrometnoNoviController.cs" />
+    <Compile Include="RESTApi_prometno\LPRPrometnoController.cs" />
+    <Compile Include="RESTApi_prometno\MethodsPrometno.cs" />
+    <Compile Include="RESTApi_prometno\OpenALRPApi.cs" />
+    <Compile Include="RESTApi_prometno\Prekrsaj.cs" />
+    <Compile Include="RESTApi_prometno\PrekrsajiController.cs" />
+    <Compile Include="RESTApi_prometno\PrinteriPrometnoController.cs" />
+    <Compile Include="RESTApi_prometno\SlikePrometnoController.cs" />
+    <Compile Include="RESTApi_prometno\UlicePrometnoController.cs" />
+    <Compile Include="Service References\FiskalizacijaSR\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GOService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MUPParking\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PazigradPCService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\podaci\baze\Pazigrad.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Pazigrad.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="resources\podaci\baze\Postavke.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Postavke.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="resources\podaci\baze\GO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GO.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="resources\podaci\baze\GO_GRAD.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GO_GRAD.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Cloud.pubxml" />
+    <None Include="Properties\PublishProfiles\Package.pubxml" />
+    <None Include="Service References\PazigradPCService\PositionService.wsdl" />
+    <None Include="Service References\PazigradPCService\PositionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PazigradPCService\PositionService1.wsdl" />
+    <None Include="Service References\PazigradPCService\PositionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PazigradPCService\PositionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PazigradPCService\PositionService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PazigradPCService\PositionService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\podaci\baze\Pazigrad.dbml.layout">
+      <DependentUpon>Pazigrad.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\podaci\baze\Postavke.dbml.layout">
+      <DependentUpon>Postavke.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\podaci\baze\GO.dbml.layout">
+      <DependentUpon>GO.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\podaci\baze\GO_GRAD.dbml.layout">
+      <DependentUpon>GO_GRAD.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FiskalizacijaSR\" />
+    <WCFMetadataStorage Include="Service References\GOService\" />
+    <WCFMetadataStorage Include="Service References\MUPParking\" />
+    <WCFMetadataStorage Include="Service References\PazigradPCService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57848</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57848/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49982/GOPazigrad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GO.Servisi" />
+  <xs:import schemaLocation="http://localhost:49982/GOPazigrad.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Gradovi">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GradoviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GO.Servisi" minOccurs="0" name="GradoviResult" nillable="true" type="q1:ArrayOf_3DLista" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Grupe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="grad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrupeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GO.Servisi" minOccurs="0" name="GrupeResult" nillable="true" type="q2:ArrayOf_2DLista" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajKlasifikaciju">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="grad" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GO.Servisi" minOccurs="0" name="klas" nillable="true" type="q3:_Klasifikacija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajKlasifikacijuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajKlasifikacijuResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajKorisnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="grad" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GO.Servisi" minOccurs="0" name="korisnik" nillable="true" type="q4:_Korisnik" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idKlasifikacije" nillable="true" type="q5:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajKorisnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajKorisnikaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoviPredmet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="grad" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GO.Servisi" minOccurs="0" name="predmet" nillable="true" type="q6:_Predmet" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="slike" nillable="true" type="q7:ArrayOfbase64Binary" />
+        <xs:element minOccurs="0" name="proslijedi" type="xs:boolean" />
+        <xs:element minOccurs="0" name="hub" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoviPredmetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NoviPredmetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

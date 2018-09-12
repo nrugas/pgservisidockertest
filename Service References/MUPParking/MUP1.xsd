@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://MUP.Parking/Service" xmlns:q2="http://MUP.Parking/Odgovor" xmlns:q1="http://MUP.Parking/Upit" xmlns:mstns="http://MUP.Parking/Service" elementFormDefault="qualified" targetNamespace="http://MUP.Parking/Service" id="MUP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="MUP.Parking.Upit.xsd" namespace="http://MUP.Parking/Upit" />
+  <xs:import schemaLocation="MUP.Parking.Odgovor.xsd" namespace="http://MUP.Parking/Odgovor" />
+  <xs:element name="VoziloRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="zaglavlje" type="q1:UpitIdentifikacija" />
+        <xs:element name="Vozilo" type="q1:PretragaParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VoziloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OdgovorVozilo" type="q2:Odgovor" />
+        <xs:element minOccurs="0" name="Status" type="xs:int" />
+        <xs:element minOccurs="0" name="StatusMessage" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

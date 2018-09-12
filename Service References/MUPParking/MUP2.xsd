@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://MUP.Parking/Odgovor" xmlns:tns="http://MUP.Parking/Tipovi" elementFormDefault="qualified" targetNamespace="http://MUP.Parking/Odgovor" id="MUP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="TipoviPodataka.xsd" namespace="http://MUP.Parking/Tipovi" />
+  <xs:complexType name="Odgovor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VlasnikVozilo" type="OdgovorVlasnik" />
+      <xs:element minOccurs="0" name="OsnovnoVozilo" type="OdgovorVozilo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OdgovorVlasnik">
+    <xs:annotation>
+      <xs:documentation>
+        IndukatorVK će označavati da je osoba vlasnik ("V") ili korisnik ("K") vozila.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImeVlasnika" type="tns:Teks64" />
+      <xs:element minOccurs="0" name="PrezimeVlasnika" type="tns:Teks64" />
+      <xs:element minOccurs="0" name="IndikatorVK" type="tns:Indikator" />
+      <xs:element minOccurs="0" name="NazivVlasnika" type="tns:Teks72" />
+      <xs:element minOccurs="0" name="OIBVlasnika" type="tns:OIB" />
+      <xs:element minOccurs="0" name="AdresaVlasnika" type="Adresa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OdgovorVozilo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegistarskaOznaka" type="xs:string" />
+      <xs:element minOccurs="0" name="VrstaVozila" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkaVozila" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Adresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Drzava" type="xs:string" />
+      <xs:element minOccurs="0" name="Opcina" type="xs:string" />
+      <xs:element minOccurs="0" name="Mjesto" type="xs:string" />
+      <xs:element minOccurs="0" name="UlicaBroj" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

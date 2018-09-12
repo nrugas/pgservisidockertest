@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ri-ing.net/positionservice" elementFormDefault="qualified" targetNamespace="http://ri-ing.net/positionservice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" />
+  <xs:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IzracunavanjeGeoUdaljenosti" />
+  <xs:import schemaLocation="http://85.114.62.234:30102/services/PositionService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SendPositionOnly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="id" nillable="true" type="q1:OfficerCredentials" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="poss" nillable="true" type="q2:ArrayOfPositionPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPositionOnlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendPositionOnlyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPosition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="id" nillable="true" type="q3:OfficerCredentials" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q4:PositionPC" />
+        <xs:element minOccurs="0" name="registracija" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="radius" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPositionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/IzracunavanjeGeoUdaljenosti" minOccurs="0" name="SendPositionResult" nillable="true" type="q5:ArrayOfUlicaUdaljenost" />
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUlice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="id" nillable="true" type="q6:OfficerCredentials" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q7:PositionPC" />
+        <xs:element minOccurs="0" name="radius" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUliceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IzracunavanjeGeoUdaljenosti" minOccurs="0" name="GetUliceResult" nillable="true" type="q8:ArrayOfUlicaUdaljenost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLokalnaAdresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q9:OfficerCredentials" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q10:PositionPC" />
+        <xs:element minOccurs="0" name="ulica" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="kbr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLokalnaAdresaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUliceGoogle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="id" nillable="true" type="q11:OfficerCredentials" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q12:PositionPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUliceGoogleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/IzracunavanjeGeoUdaljenosti" minOccurs="0" name="GetUliceGoogleResult" nillable="true" type="q13:ArrayOfUlicaUdaljenost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q14:OfficerCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PanicAlarm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q15:OfficerCredentials" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q16:PositionPC" />
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PanicAlarmResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvjeriBrojNaUplatnici">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barcode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iznosKazne" type="xs:float" />
+        <xs:element minOccurs="0" name="iznosNauplatnici" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvjeriBrojNaUplatniciResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProvjeriBrojNaUplatniciResult" type="xs:int" />
+        <xs:element minOccurs="0" name="poruka" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiPrekrsaj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q17:OfficerCredentials" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pod" nillable="true" type="q18:PodaciPrekrsajPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiPrekrsajResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SpremiPrekrsajResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="idPauk" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LicencePlateRecognition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q19:OfficerCredentials" />
+        <xs:element minOccurs="0" name="mbmp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="callService" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LicencePlateRecognitionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LicencePlateRecognitionResult" nillable="true" type="q20:ArrayOfstring" />
+        <xs:element minOccurs="0" name="plateBmp" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LicencePlateRecognitionWithAngles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q21:OfficerCredentials" />
+        <xs:element minOccurs="0" name="mbmp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="callService" type="xs:dateTime" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lprAngles" nillable="true" type="q22:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LicencePlateRecognitionWithAnglesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LicencePlateRecognitionWithAnglesResult" nillable="true" type="q23:ArrayOfstring" />
+        <xs:element minOccurs="0" name="plateBmp" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParametriTerminala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startUp" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParametriTerminalaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetParametriTerminalaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParametri">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParametriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetParametriResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParametriAdd">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParametriAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetParametriAddResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imeGrada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="grb" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrekrsajeRegistracijeNovi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="drzava" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" type="xs:double" />
+        <xs:element minOccurs="0" name="longitude" type="xs:double" />
+        <xs:element minOccurs="0" name="brDana" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrekrsajeRegistracijeNoviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPrekrsajeRegistracijeNoviResult" nillable="true" type="q24:ArrayOfArrayOfanyType" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="naLokaciji" nillable="true" type="q25:ArrayOfPostupanje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTerminalResetRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTerminalResetRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTerminalResetRequestResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostojiPozivNaBroj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pnb" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostojiPozivNaBrojResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PostojiPozivNaBrojResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterMobileVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="progVer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="romVer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterMobileVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterMobileVersionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfoGetVer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfoGetVerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetInfoGetVerResult" type="xs:int" />
+        <xs:element minOccurs="0" name="productVersion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfoGetVerSMSNum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfoGetVerSMSNumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetInfoGetVerSMSNumResult" type="xs:int" />
+        <xs:element minOccurs="0" name="productVersion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsTelNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsMessageToSend" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfoGetVerSMSNumWithCredentials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q26:OfficerCredentials" />
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInfoGetVerSMSNumWithCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetInfoGetVerSMSNumWithCredentialsResult" type="xs:int" />
+        <xs:element minOccurs="0" name="productVersion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsTelNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsMessageToSend" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerDateTime">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServerDateTimeResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PosebnoVozilo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PosebnoVoziloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PosebnoVoziloResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostojiOdobrenje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostojiOdobrenjeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PostojiOdobrenjeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PromijeniLozinku">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q27:OfficerCredentials" />
+        <xs:element minOccurs="0" name="nloz" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PromijeniLozinkuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PromijeniLozinkuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTrenutnihLokacija">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="useGoogle" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTrenutnihLokacijaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="ListaTrenutnihLokacijaResult" nillable="true" type="q28:ArrayOfPozicijaDjelatnika" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPicture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="bmp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="picTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPictureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendPictureResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPictureWithAngle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="bmp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="rotationAngle" type="xs:int" />
+        <xs:element minOccurs="0" name="picTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPictureWithAngleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendPictureWithAngleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPositionPauka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q29:PositionPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPositionPaukaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendPositionPaukaResult" type="xs:int" />
+        <xs:element minOccurs="0" name="idStatusaLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="idCentralneLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="idStatusaNaloga" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPositionsPauka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="poss" nillable="true" type="q30:ArrayOfPositionPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPositionsPaukaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendPositionsPaukaResult" type="xs:int" />
+        <xs:element minOccurs="0" name="idNaloga" type="xs:int" />
+        <xs:element minOccurs="0" name="idStatusaLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="idCentralneLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="idStatusaNaloga" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetNalogResult" nillable="true" type="q31:NalogPauku" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniStatusNaloga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idNaloga" type="xs:int" />
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idDjetatnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idStatusa" type="xs:int" />
+        <xs:element minOccurs="0" name="idRazloga" type="xs:int" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q32:PositionPC" />
+        <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmjeniStatusNalogaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="IzmjeniStatusNalogaResult" nillable="true" type="q33:NalogPauku" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSlika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSlikePrekrsaja" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSlikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSlikaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="slika" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TekuciNalogID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TekuciNalogIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TekuciNalogIDResult" type="xs:int" />
+        <xs:element minOccurs="0" name="status" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRazlozi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="statusID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRazloziResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetRazloziResult" nillable="true" type="q34:ArrayOfRazlogUzStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVozilo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVoziloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetVoziloResult" nillable="true" type="q35:Vozilo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNazivVozila">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNazivVozilaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNazivVozilaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DohvatiCentralnuLokaciju">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clocId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DohvatiCentralnuLokacijuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="DohvatiCentralnuLokacijuResult" nillable="true" type="q36:CentralnaLokacija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OtvoreniNalozi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q37:OfficerCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OtvoreniNaloziResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="OtvoreniNaloziResult" nillable="true" type="q38:ArrayOfNalogPauku" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StornoNaloga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q39:OfficerCredentials" />
+        <xs:element minOccurs="0" name="nalogId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StornoNalogaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StornoNalogaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSlikeIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSlikeIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSlikeIdsResult" nillable="true" type="q40:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNoviRacun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNoviRacunResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNoviRacunResult" type="xs:int" />
+        <xs:element minOccurs="0" name="iznos" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Naplati">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brojRacuna" type="xs:int" />
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q41:PositionPC" />
+        <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NaplatiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NaplatiResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrintData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q42:OfficerCredentials" />
+        <xs:element minOccurs="0" name="xmlPodaci" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="qty" type="xs:int" />
+        <xs:element minOccurs="0" name="idPredloska" type="xs:int" />
+        <xs:element minOccurs="0" name="idJezika" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrintDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPrintDataResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ispis" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NaplatiPrekrsaj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q43:OfficerCredentials" />
+        <xs:element minOccurs="0" name="idPrekrsaja" type="xs:int" />
+        <xs:element minOccurs="0" name="idVrstePlacanja" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NaplatiPrekrsajResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NaplatiPrekrsajResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="poruka" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Naplativo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q44:OfficerCredentials" />
+        <xs:element minOccurs="0" name="brObavijesti" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NaplativoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="NaplativoResult" nillable="true" type="q45:PodaciPrekrsajPC" />
+        <xs:element minOccurs="0" name="poruka" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPorukuRedaru">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q46:OfficerCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DajPorukuRedaruResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DajPorukuRedaruResult" type="xs:int" />
+        <xs:element minOccurs="0" name="poruka" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="posiljatelj" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idPosiljatelja" type="xs:int" />
+        <xs:element minOccurs="0" name="vrijemePoruke" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="brojPoruka" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcitajPoruku">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q47:OfficerCredentials" />
+        <xs:element minOccurs="0" name="idPoruke" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcitajPorukuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcitajPorukuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="log" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SpremiLogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiLogSaRazlogom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="log" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="razlogRestarta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiLogSaRazlogomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SpremiLogSaRazlogomResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiLogNovi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="log" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="razlogRestarta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiLogNoviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SpremiLogNoviResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="zipOnServer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatusZahtjeva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idZahtjeva" type="xs:int" />
+        <xs:element minOccurs="0" name="status" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatusZahtjevaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StatusZahtjevaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="status" type="xs:int" />
+        <xs:element minOccurs="0" name="poruka" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idNaloga" type="xs:int" />
+        <xs:element minOccurs="0" name="kazna" type="xs:float" />
+        <xs:element minOccurs="0" name="ideUplatnica" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ZahtjevZaPremjestanje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q48:OfficerCredentials" />
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pod" nillable="true" type="q49:PodaciPrekrsajPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ZahtjevZaPremjestanjeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ZahtjevZaPremjestanjeResult" type="xs:int" />
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPictureInfoStamp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="mbmp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="picTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="officerUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPictureInfoStampResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendPictureInfoStampResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPictureInfoStampWithAngle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="mbmp" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="rotationAngle" type="xs:int" />
+        <xs:element minOccurs="0" name="picTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="officerUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPictureInfoStampWithAngleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendPictureInfoStampWithAngleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrimaZahtjeve">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrimaZahtjeveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrimaZahtjeveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPodrucju">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q50:OfficerCredentials" />
+        <xs:element minOccurs="0" name="latitude" type="xs:double" />
+        <xs:element minOccurs="0" name="longitude" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPodrucjuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UPodrucjuResult" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoviPredmet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q51:OfficerCredentials" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="predmet" nillable="true" type="q52:GOPredmet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoviPredmetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NoviPredmetResult" type="xs:int" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="predmet" nillable="true" type="q53:GOPredmet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiError">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q54:OfficerCredentials" />
+        <xs:element minOccurs="0" name="greska" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="napomena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiErrorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiErrorNaTerminalu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="greska" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="napomena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiErrorNaTerminaluResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiAkciju">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q55:OfficerCredentials" />
+        <xs:element minOccurs="0" name="idAkcije" type="xs:int" />
+        <xs:element minOccurs="0" name="napomena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiAkcijuResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DohvatiGrupe">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DohvatiGrupeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="DohvatiGrupeResult" nillable="true" type="q56:ArrayOfGOGrupa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DohvatiGrupeDjelatnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q57:OfficerCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DohvatiGrupeDjelatnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="DohvatiGrupeDjelatnikaResult" nillable="true" type="q58:ArrayOfGOGrupa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CurrentConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="config" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CurrentConfigResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForwardSMS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="termName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="received" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imsi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForwardSMSResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IspisObavijestiZaPauka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idLokacije" type="xs:int" />
+        <xs:element minOccurs="0" name="bcUplatnice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IspisObavijestiZaPaukaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IspisObavijestiZaPaukaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NaplatiSaFiskalizacijom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idNaloga" type="xs:int" />
+        <xs:element minOccurs="0" name="idStatusa" type="xs:int" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="osoba" nillable="true" type="q59:UplatiteljOsobniPodaci" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q60:OfficerCredentials" />
+        <xs:element minOccurs="0" name="idVrstePlacanja" type="xs:int" />
+        <xs:element minOccurs="0" name="iznos" type="xs:decimal" />
+        <xs:element minOccurs="0" name="bcUplatnice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NaplatiSaFiskalizacijomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NaplatiSaFiskalizacijomResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRacuna" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiDokument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRacuna" type="xs:int" />
+        <xs:element minOccurs="0" name="slika" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpremiDokumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SpremiDokumentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVrstePlacanja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idStatusa" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVrstePlacanjaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetVrstePlacanjaResult" nillable="true" type="q61:ArrayOfVrstaPlacanja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrinteri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGdjeSeKoristi" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrinteriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetPrinteriResult" nillable="true" type="q62:ArrayOfPrinter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTerminal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTerminalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetTerminalResult" nillable="true" type="q63:Terminal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDjelatnik">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDjelatnikResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetDjelatnikResult" nillable="true" type="q64:Djelatnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZakoni">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZakoniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetZakoniResult" nillable="true" type="q65:ArrayOfPrekrsajPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvjeriOpazanje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pod" nillable="true" type="q66:PodaciOpazanje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvjeriOpazanjeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProvjeriOpazanjeResult" type="xs:int" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pod" nillable="true" type="q67:PodaciOpazanje" />
+        <xs:element minOccurs="0" name="kadaIstice" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpazanja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDjelatnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idSektora" type="xs:int" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q68:PositionPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpazanjaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetOpazanjaResult" nillable="true" type="q69:ArrayOfPodaciOpazanje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSektoriZone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pos" nillable="true" type="q70:PositionPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSektoriZoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSektoriZoneResult" type="xs:boolean" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="sektori" nillable="true" type="q71:ArrayOfSektor" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="zone" nillable="true" type="q72:ArrayOfZona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrivremenaObustavaNaloga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrivremenaObustavaNalogaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrivremenaObustavaNalogaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzvjestajSmjene">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDjelatnika" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzvjestajSmjeneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzvjestajSmjeneResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IspisRacuna">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRacuna" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IspisRacunaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IspisRacunaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NeobradjeniZahtjevi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDjelatnika" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NeobradjeniZahtjeviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NeobradjeniZahtjeviResult" type="xs:int" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pPrijava" nillable="true" type="q73:PaukPrijava" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreuzmiZahtjev">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDjelatnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idZahtjeva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreuzmiZahtjevResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreuzmiZahtjevResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OdustaniOdZahtjeva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDjelatnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idZahtjeva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OdustaniOdZahtjevaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OdustaniOdZahtjevaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaukOdustaoOdZahtjeva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idZahtjeva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaukOdustaoOdZahtjevaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaukOdustaoOdZahtjevaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OdobriZahtjev">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDjelatnika" type="xs:int" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="pprijava" nillable="true" type="q74:PaukPrijava" />
+        <xs:element minOccurs="0" name="idOpisa" type="xs:int" />
+        <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registracija" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="drzava" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="obavijest" type="xs:boolean" />
+        <xs:element minOccurs="0" name="nalogPauku" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OdobriZahtjevResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OdobriZahtjevResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OdbijZahtjev">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDjelatnika" type="xs:int" />
+        <xs:element minOccurs="0" name="idZahtjeva" type="xs:int" />
+        <xs:element minOccurs="0" name="razlog" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OdbijZahtjevResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OdbijZahtjevResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreuzeoZahtjev">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idZahtjeva" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreuzeoZahtjevResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="PreuzeoZahtjevResult" nillable="true" type="q75:Djelatnik" />
+        <xs:element minOccurs="0" name="app" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlokirani">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q76:OfficerCredentials" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="currpos" nillable="true" type="q77:PositionPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlokiraniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="GetBlokiraniResult" nillable="true" type="q78:ArrayOfBlokiran" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IznosDeblokade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q79:OfficerCredentials" />
+        <xs:element minOccurs="0" name="idNaloga" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IznosDeblokadeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IznosDeblokadeResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeblokirajVozilo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="cred" nillable="true" type="q80:OfficerCredentials" />
+        <xs:element minOccurs="0" name="idNaloga" type="xs:int" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/PositionTrackerPC.WebService" minOccurs="0" name="osoba" nillable="true" type="q81:UplatiteljOsobniPodaci" />
+        <xs:element minOccurs="0" name="idVrstePlacanja" type="xs:int" />
+        <xs:element minOccurs="0" name="bcUplatnice" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeblokirajVoziloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeblokirajVoziloResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRacuna" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Windows</DockerTargetOS>
+    <ProjectGuid>f4472861-c1b6-4aab-8796-e5d0672bd8c2</ProjectGuid>
+    <DockerLaunchAction>LaunchWCFTestClient</DockerLaunchAction>
+    <DockerServiceUrl>http://{ServiceIPAddress}/PGAdministracija.svc</DockerServiceUrl>
+    <DockerServiceName>pg.servisi</DockerServiceName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.yml" />
+  </ItemGroup>
+</Project>

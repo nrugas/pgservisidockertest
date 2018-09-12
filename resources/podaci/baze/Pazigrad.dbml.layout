@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 25.5, 39.625" name="Pazigrad">
+  <DataContextMoniker Name="/PazigradDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bdf8fd50-b983-4f97-bbe0-acc0c7997e6e" absoluteBounds="10.25, 30.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PazigradDataContext/ZahtjeviAkcije" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0163ee6a-7e33-4d09-a65d-7f845d392865" absoluteBounds="10.265, 31.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="045da1f7-06ef-4fcc-83f2-3aa7ae9d0864" absoluteBounds="17.125, 5, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PazigradDataContext/CentralneLokacije" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e26b8a47-4684-4edd-8ef5-101cbcadf077" absoluteBounds="17.14, 5.4600000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc6c6e4a-0df0-4a65-8fb5-7c57f21a1435" absoluteBounds="8, 26.875, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/PazigradDataContext/DjelatniciPauka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="acbd7d74-a25b-4f43-8d55-7846928f0859" absoluteBounds="8.015, 27.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4abf5d79-5f19-4707-82b4-3d5507a169c4" absoluteBounds="3.5, 18.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PazigradDataContext/DrzavaRegistracije" />
+      <nestedChildShapes>
+        <elementListCompartment Id="467edf25-4410-4a12-b9bf-8432817a54ce" absoluteBounds="3.5150000000000006, 19.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b275fa8-1f8a-43f3-8089-86d3a2722659" absoluteBounds="0.75, 19.125, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/PazigradDataContext/Jezici" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6732efe0-8c9a-4fb4-a76f-a7078a25f473" absoluteBounds="0.76500000000000057, 19.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a492e97-3795-45fb-9ad7-03d9317b6491" absoluteBounds="0.5, 22.625, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PazigradDataContext/Log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aab201da-c614-45a5-8aea-b83a91f48f6e" absoluteBounds="0.51500000000000057, 23.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe90171d-0c1b-4573-bd58-798a4b32060f" absoluteBounds="14.5, 1.625, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PazigradDataContext/LokacijePauka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d45c1c33-be70-4b04-94ce-1001a171a2ef" absoluteBounds="14.515, 2.0850000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2fe92603-7818-4b61-9e59-65dfd2d3229b" absoluteBounds="0.5, 31.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PazigradDataContext/LokalneAdrese" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e84fbfc0-be77-4aa1-8722-77b69aad15f7" absoluteBounds="0.51500000000000057, 31.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a66ee72-6735-469a-9e9f-a728ae1a1c84" absoluteBounds="9.375, 14.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PazigradDataContext/NacinPozicioniranja" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e0a7734-7436-4955-9f38-23c86749f4c4" absoluteBounds="9.39, 15.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41a3daba-07cc-47f5-aed1-d24f9d8070c3" absoluteBounds="0.5, 33.375, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/PazigradDataContext/NaglaseneUlice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="353d881b-3d39-4fb1-b3f3-ec4583adbd5d" absoluteBounds="0.51500000000000057, 33.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fce75c76-7cf6-4e66-944c-4cb178a48480" absoluteBounds="2.75, 30.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PazigradDataContext/NeocitaneRegistracije" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26417e30-f4ed-46a4-a9c5-a60ab7affde4" absoluteBounds="2.7650000000000006, 30.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="913d9cf2-09f0-4d41-a9c0-fb294a82de81" absoluteBounds="2.75, 33.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PazigradDataContext/OpisiPrekrsajaPrijevodi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0da75375-8f4c-498c-8020-660706c549d8" absoluteBounds="2.7650000000000006, 33.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6c903a7-f6a3-4d48-b3e4-1a3da3b75b8c" absoluteBounds="12, 14.625, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/PazigradDataContext/Pauk" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25b90c89-d4b4-4e43-ac18-b6583027af18" absoluteBounds="12.015, 15.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66967935-c062-47ae-a63d-2e36412a3ce5" absoluteBounds="0.5, 29.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PazigradDataContext/PopisPrekrsajaPrijevodi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e75af7a-5ff7-4816-8a2c-51586f8c58c5" absoluteBounds="0.51500000000000057, 29.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8968069-220a-4f9f-94a2-a611ec33f80a" absoluteBounds="2.75, 24.375, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/PazigradDataContext/Poruke" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52a899f7-b970-492d-9131-3ca4ffdd2323" absoluteBounds="2.7650000000000006, 24.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="666217a1-35fa-43f4-a5e2-2d599edaa648" absoluteBounds="0.75, 16, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PazigradDataContext/PrevedeniPredlosci" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c1c3b61-0726-4f8d-9a40-6aaa1c252f35" absoluteBounds="0.76500000000000057, 16.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d7fbfbb-40aa-4e51-87ee-3828fd29e1ac" absoluteBounds="16.5, 8.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PazigradDataContext/RazloziNepodizanjaVozila" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8538e55-5f0a-4993-9a21-70b62287165c" absoluteBounds="16.515, 9.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23e0f2e4-dbb6-4f64-a891-a5c806278380" absoluteBounds="0.875, 10.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PazigradDataContext/SlikaPrekrsaja" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f964165a-7797-487e-a909-9d56bc9d303d" absoluteBounds="0.89000000000000057, 10.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="736454c2-96e5-4f04-a186-47aded6d8d45" absoluteBounds="17.625, 1.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/PazigradDataContext/StatusLokacijePauka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b46ce45e-88c6-4d09-9da1-49125a3fbaf9" absoluteBounds="17.64, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2684760-b520-46a2-b595-672ade7f4cda" absoluteBounds="9.625, 0.5, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/PazigradDataContext/Terminali" />
+      <nestedChildShapes>
+        <elementListCompartment Id="573200eb-1e15-437e-b45f-2a5086b619cc" absoluteBounds="9.64, 0.96000000000000085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16715fd4-1a47-476a-b5ed-0b727ac8530a" absoluteBounds="14.5, 5.375, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/PazigradDataContext/VozilaCentralnelokacije" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1367c1c-fa92-4f4a-9a6c-1fd78218b385" absoluteBounds="14.515, 5.8350000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a075973e-7632-4094-ba0f-ebfdff45e758" absoluteBounds="10.25, 21, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PazigradDataContext/VppStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3fec0929-d058-436a-8733-1ea5f222105a" absoluteBounds="10.265, 21.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e66bb2e2-d468-4ead-9cdc-95b92bd789f1" absoluteBounds="10.25, 23, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/PazigradDataContext/VppVanjskoAkcije" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e443b855-eadd-4635-9f12-470817489c81" absoluteBounds="10.265, 23.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1da9a87-29bb-4484-aa87-69dc9dbbf4ff" absoluteBounds="8, 21, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/PazigradDataContext/VppVanjskoUplate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d12582df-668d-4d82-821e-2f2c9e82d694" absoluteBounds="8.015, 21.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="27698a36-0e5b-4403-b1f8-19fbe54f9072" absoluteBounds="9.375, 13.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PazigradDataContext/VrstePlacanja" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e8b7cab-9935-45c9-9016-ad7e1629ecf2" absoluteBounds="9.39, 13.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 19.7219962565104); (3.5 : 19.7219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/Jezici/Jezici_DrzavaRegistracije" />
+      <nodes>
+        <classShapeMoniker Id="0b275fa8-1f8a-43f3-8089-86d3a2722659" />
+        <classShapeMoniker Id="4abf5d79-5f19-4707-82b4-3d5507a169c4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.125 : 5); (18.125 : 3.4605457047698); (16.5 : 3.4605457047698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/CentralneLokacije/CentralneLokacije_LokacijePauka" />
+      <nodes>
+        <classShapeMoniker Id="045da1f7-06ef-4fcc-83f2-3aa7ae9d0864" />
+        <classShapeMoniker Id="fe90171d-0c1b-4573-bd58-798a4b32060f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 19.125); (1.75 : 17.5785953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/Jezici/Jezici_PrevedeniPredlosci" />
+      <nodes>
+        <classShapeMoniker Id="0b275fa8-1f8a-43f3-8089-86d3a2722659" />
+        <classShapeMoniker Id="666217a1-35fa-43f4-a5e2-2d599edaa648" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.625 : 2.34699625651042); (16.5 : 2.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/StatusLokacijePauka/StatusLokacijePauka_LokacijePauka" />
+      <nodes>
+        <classShapeMoniker Id="736454c2-96e5-4f04-a186-47aded6d8d45" />
+        <classShapeMoniker Id="fe90171d-0c1b-4573-bd58-798a4b32060f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.625 : 2.81330485026042); (14.5 : 2.81330485026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/Terminali/Terminali_LokacijePauka" />
+      <nodes>
+        <classShapeMoniker Id="e2684760-b520-46a2-b595-672ade7f4cda" />
+        <classShapeMoniker Id="fe90171d-0c1b-4573-bd58-798a4b32060f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.125 : 5.47953163078529); (16.5 : 5.47953163078529)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/CentralneLokacije/CentralneLokacije_VozilaCentralnelokacije" />
+      <nodes>
+        <classShapeMoniker Id="045da1f7-06ef-4fcc-83f2-3aa7ae9d0864" />
+        <classShapeMoniker Id="16715fd4-1a47-476a-b5ed-0b727ac8530a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9b9b60f3-030a-4412-9e0c-923bb0aa0f98" absoluteBounds="9.625, 4.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PazigradDataContext/Posada" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6299b5ff-d456-4ff4-a730-7b783ff7e5e7" absoluteBounds="9.64, 5.3350000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d10bfe9-8b53-4d79-87e3-8c6e24f367c0" absoluteBounds="17.75, 16.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI_STAVKE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c4df987-80f1-4d1d-98fd-a1eef078306b" absoluteBounds="17.765, 17.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6efede3a-d86a-4cbb-8b1b-e1eadcb77e69" absoluteBounds="14.75, 14.5, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PazigradDataContext/StatusPauka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="941db16d-e98b-4af1-9ded-f06299531d69" absoluteBounds="14.765, 14.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.75 : 15.4479484049479); (14 : 15.4479484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/StatusPauka/StatusPauka_Pauk" />
+      <nodes>
+        <classShapeMoniker Id="6efede3a-d86a-4cbb-8b1b-e1eadcb77e69" />
+        <classShapeMoniker Id="f6c903a7-f6a3-4d48-b3e4-1a3da3b75b8c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b88c3e1a-ed53-4cb8-93d0-2645eb05d464" absoluteBounds="23.25, 12.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI_OSOBE_RELACIJE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac3cb1c1-64f0-4566-8122-558c8bfcee5d" absoluteBounds="23.265, 13.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ca1ae9e-4f82-4ec9-9419-e438cbec909d" absoluteBounds="23.25, 18.125, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI_OSOBE_DOKUMENTI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58402c6a-0e19-42aa-b89a-5cdbf915d6e8" absoluteBounds="23.265, 18.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee72cb09-a28d-4626-8bd1-864b05e3fccf" absoluteBounds="2.75, 27.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PazigradDataContext/PozicijeKamera" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1422e7dd-37d8-438e-af7b-ca91a636fb05" absoluteBounds="2.7650000000000006, 28.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b583f42-6d20-4b6a-8632-54d603c599f5" absoluteBounds="18, 11.25, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PazigradDataContext/PovijestNaloga" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38b2f7dd-6672-4ac4-aca1-776201191445" absoluteBounds="18.015, 11.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18.84375 : 6.77089680989583); (18.84375 : 11.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/CentralneLokacije/CentralneLokacije_PovijestNaloga" />
+      <nodes>
+        <classShapeMoniker Id="045da1f7-06ef-4fcc-83f2-3aa7ae9d0864" />
+        <classShapeMoniker Id="8b583f42-6d20-4b6a-8632-54d603c599f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.25 : 10.0112939453125); (18.25 : 11.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RazloziNepodizanjaVozila/RazloziNepodizanjaVozila_PovijestNaloga" />
+      <nodes>
+        <classShapeMoniker Id="2d7fbfbb-40aa-4e51-87ee-3828fd29e1ac" />
+        <classShapeMoniker Id="8b583f42-6d20-4b6a-8632-54d603c599f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.40625 : 2.94399251302083); (19.40625 : 11.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/StatusLokacijePauka/StatusLokacijePauka_PovijestNaloga" />
+      <nodes>
+        <classShapeMoniker Id="736454c2-96e5-4f04-a186-47aded6d8d45" />
+        <classShapeMoniker Id="8b583f42-6d20-4b6a-8632-54d603c599f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 15.4151030390625); (19.050546388295 : 15.4151030390625); (19.050546388295 : 14.5593082682292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/StatusPauka/StatusPauka_PovijestNaloga" />
+      <nodes>
+        <classShapeMoniker Id="6efede3a-d86a-4cbb-8b1b-e1eadcb77e69" />
+        <classShapeMoniker Id="8b583f42-6d20-4b6a-8632-54d603c599f5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7ae11463-f5ac-43cf-91e0-0380da77b7e9" absoluteBounds="5.375, 29, 2, 5.6169254557291666">
+      <DataClassMoniker Name="/PazigradDataContext/POSLOVNI_PROSTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb5dd1ce-a438-42d4-bce6-f374a18bdedf" absoluteBounds="5.3900000000000006, 29.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8fabf25d-b30e-4941-b0d0-4552330651e5" absoluteBounds="0.5, 25, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/PazigradDataContext/PostavkePrograma" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf09e206-a59e-477f-98fb-826079e2cff6" absoluteBounds="0.51500000000000057, 25.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c387c83-11c6-42a5-95b5-ee0b43a2d34b" absoluteBounds="5.5, 21.125, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/PazigradDataContext/MUP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cd8ed29-f00c-4b46-a727-80afe9248508" absoluteBounds="5.515, 21.585, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00e316d2-bb77-4f99-9c42-2d90f757a92f" absoluteBounds="8, 30.125, 2, 3.1170068359375">
+      <DataClassMoniker Name="/PazigradDataContext/VPPPREKRSAJI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac931155-3f87-4f32-8daf-d50844263f05" absoluteBounds="8.015, 30.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c01ffa50-6cb7-41a1-a97f-bd4346a17016" absoluteBounds="12.75, 24.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/PazigradDataContext/RENTACAR_VOZILA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43e52983-e19e-4878-89e2-534b2f1ba70b" absoluteBounds="12.765, 24.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ba8150b-9d6b-4561-bf55-75cf6423da49" absoluteBounds="2.375, 1.5, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/PazigradDataContext/PARKING_SEKTORI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a768103-470d-4116-9c70-4d943cf12fc6" absoluteBounds="2.3900000000000006, 1.9600000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b26e2047-cc5a-4c96-a342-84487c219a8e" absoluteBounds="0.5, 20.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PazigradDataContext/PosebnaVozila" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e83a155-1677-4f86-a7ce-13050105acd6" absoluteBounds="0.51500000000000057, 21.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d3d03eb-16ee-4679-89b5-daebf9bfebf5" absoluteBounds="14.125, 8.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/PazigradDataContext/NaloziPauku" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb8467cc-18d3-4c2a-a567-55dd9f2a7ebf" absoluteBounds="14.14, 8.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.5 : 9.31814697265625); (16.125 : 9.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RazloziNepodizanjaVozila/RazloziNepodizanjaVozila_NaloziPauku" />
+      <nodes>
+        <classShapeMoniker Id="2d7fbfbb-40aa-4e51-87ee-3828fd29e1ac" />
+        <classShapeMoniker Id="2d3d03eb-16ee-4679-89b5-daebf9bfebf5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.4375 : 14.5); (15.4375 : 11.4920068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/StatusPauka/StatusPauka_NaloziPauku" />
+      <nodes>
+        <classShapeMoniker Id="6efede3a-d86a-4cbb-8b1b-e1eadcb77e69" />
+        <classShapeMoniker Id="2d3d03eb-16ee-4679-89b5-daebf9bfebf5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="51170f4d-9029-49b9-a002-81f6fe5d1b5b" absoluteBounds="3.875, 13.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PazigradDataContext/OpisiPrekrsaja" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c63d1b78-2960-4ca8-afb3-824b98b5028c" absoluteBounds="3.89, 13.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="74c56efd-2bb9-49ba-9d33-2a8993eb457c" absoluteBounds="12.75, 20.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PazigradDataContext/RENTACAR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b988ba03-8fc3-4b9e-a17e-5bb31c08ce6e" absoluteBounds="12.765, 21.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.75 : 23.6074039713542); (13.75 : 24.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RENTACAR/RENTACAR_RENTACAR_VOZILA" />
+      <nodes>
+        <classShapeMoniker Id="74c56efd-2bb9-49ba-9d33-2a8993eb457c" />
+        <classShapeMoniker Id="c01ffa50-6cb7-41a1-a97f-bd4346a17016" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4b4aabf7-aa64-4de4-aaa0-6f114caa7446" absoluteBounds="23.25, 14.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI_OSOBE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85772f61-2e8f-41ae-81b3-f85e924e393b" absoluteBounds="23.265, 14.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(24.25 : 14.5); (24.25 : 14.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RACUNI_OSOBE/RACUNI_OSOBE_RACUNI_OSOBE_RELACIJE" />
+      <nodes>
+        <classShapeMoniker Id="4b4aabf7-aa64-4de4-aaa0-6f114caa7446" />
+        <classShapeMoniker Id="b88c3e1a-ed53-4cb8-93d0-2645eb05d464" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(24.25 : 17.8093082682292); (24.25 : 18.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RACUNI_OSOBE/RACUNI_OSOBE_RACUNI_OSOBE_DOKUMENTI" />
+      <nodes>
+        <classShapeMoniker Id="4b4aabf7-aa64-4de4-aaa0-6f114caa7446" />
+        <classShapeMoniker Id="7ca1ae9e-4f82-4ec9-9419-e438cbec909d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="24f76490-8a21-4068-b4e6-de05ba97e5d0" absoluteBounds="8, 23.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/PazigradDataContext/VppVanjskoPostupci" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a657b7aa-1837-45b7-a313-b276455a0679" absoluteBounds="8.015, 24.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4464e4df-9cab-4b84-8edb-b357ac56081f" absoluteBounds="20.5, 12.75, 2, 6.9630354817708326">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="043815c7-a546-4c0e-acc5-351d7c7fd70b" absoluteBounds="20.515, 13.21, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(20.5 : 18.2412019856771); (19.75 : 18.2412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RACUNI/RACUNI_RACUNI_STAVKE" />
+      <nodes>
+        <classShapeMoniker Id="4464e4df-9cab-4b84-8edb-b357ac56081f" />
+        <classShapeMoniker Id="9d10bfe9-8b53-4d79-87e3-8c6e24f367c0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.5 : 13.4431469726563); (23.25 : 13.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RACUNI/RACUNI_RACUNI_OSOBE_RELACIJE" />
+      <nodes>
+        <classShapeMoniker Id="4464e4df-9cab-4b84-8edb-b357ac56081f" />
+        <classShapeMoniker Id="b88c3e1a-ed53-4cb8-93d0-2645eb05d464" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9abf3f9f-2582-437c-b123-27f2dafa6e61" absoluteBounds="5.375, 25, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/PazigradDataContext/VANJSKE_PRIJAVE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fccaf2ef-0e6d-4daa-a1ba-fdfdebd21096" absoluteBounds="5.39, 25.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba4572db-eb0a-4f12-8c22-a6b3e75336b1" absoluteBounds="14.375, 17.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI_STAVKE_OPI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="635da673-c36f-43d9-a38c-93cf2b6cbfab" absoluteBounds="14.39, 18.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.375 : 18.7412019856771); (17.75 : 18.7412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RACUNI_STAVKE_OPI/RACUNI_STAVKE_OPI_RACUNI_STAVKE" />
+      <nodes>
+        <classShapeMoniker Id="ba4572db-eb0a-4f12-8c22-a6b3e75336b1" />
+        <classShapeMoniker Id="9d10bfe9-8b53-4d79-87e3-8c6e24f367c0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.5625 : 16.2708968098958); (15.5625 : 17.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/StatusPauka/StatusPauka_RACUNI_STAVKE_OPI" />
+      <nodes>
+        <classShapeMoniker Id="6efede3a-d86a-4cbb-8b1b-e1eadcb77e69" />
+        <classShapeMoniker Id="ba4572db-eb0a-4f12-8c22-a6b3e75336b1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f2a1138a-4f32-4ac4-b808-08410f825a92" absoluteBounds="9.375, 16.375, 2, 7.3476383463541657">
+      <DataClassMoniker Name="/PazigradDataContext/Prekrsaji" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b248843-80b1-4f6e-889c-9ed1a2fac1b1" absoluteBounds="9.39, 16.835, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 19.6642976888021); (9.375 : 19.6642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/DrzavaRegistracije/DrzavaRegistracije_Prekrsaji" />
+      <nodes>
+        <classShapeMoniker Id="4abf5d79-5f19-4707-82b4-3d5507a169c4" />
+        <classShapeMoniker Id="f2a1138a-4f32-4ac4-b808-08410f825a92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.4062525 : 15.8189925130208); (10.4062525 : 16.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/NacinPozicioniranja/NacinPozicioniranja_Prekrsaji" />
+      <nodes>
+        <classShapeMoniker Id="6a66ee72-6735-469a-9e9f-a728ae1a1c84" />
+        <classShapeMoniker Id="f2a1138a-4f32-4ac4-b808-08410f825a92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.875 : 15.6554996744792); (6.25 : 16.0304996744792); (6.25 : 16); (9 : 16); (9.375 : 16.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/OpisiPrekrsaja/OpisiPrekrsaja_Prekrsaji" />
+      <nodes>
+        <classShapeMoniker Id="51170f4d-9029-49b9-a002-81f6fe5d1b5b" />
+        <classShapeMoniker Id="f2a1138a-4f32-4ac4-b808-08410f825a92" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9218f2a5-c0f5-457c-b907-ad421493c75c" absoluteBounds="2.25, 5.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PazigradDataContext/PARKING_ZONE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56bc4597-b626-4e0b-8e61-531e9c4a4205" absoluteBounds="2.265, 5.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.3125 : 5.125); (3.3125 : 3.84780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/PARKING_ZONE/PARKING_ZONE_PARKING_SEKTORI" />
+      <nodes>
+        <classShapeMoniker Id="9218f2a5-c0f5-457c-b907-ad421493c75c" />
+        <classShapeMoniker Id="4ba8150b-9d6b-4561-bf55-75cf6423da49" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7cc75466-4b73-4676-85c7-1eb75007d38d" absoluteBounds="20.75, 20.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI_ZAKLJUCENJA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e2bdfc9-27d2-46ed-a108-5ea50aa442e0" absoluteBounds="20.765, 20.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.625 : 20.5); (21.625 : 19.7130354817708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/RACUNI_ZAKLJUCENJA/RACUNI_ZAKLJUCENJA_RACUNI" />
+      <nodes>
+        <classShapeMoniker Id="7cc75466-4b73-4676-85c7-1eb75007d38d" />
+        <classShapeMoniker Id="4464e4df-9cab-4b84-8edb-b357ac56081f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fa35e819-2962-4de4-bbbe-6301e19437c6" absoluteBounds="23.125, 1.875, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/PazigradDataContext/BLAGAJNICKI_DNEVNIK_STAVKE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f98435f9-31b4-45b9-a596-dff1502f95c3" absoluteBounds="23.14, 2.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c233702-908a-4f44-8067-965810b5cddd" absoluteBounds="20.625, 2.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PazigradDataContext/BLAGAJNICKI_DNEVNIK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cc165c4-4409-48a2-b190-02770141606e" absoluteBounds="20.64, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(22.625 : 3.23159912109375); (23.125 : 3.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/BLAGAJNICKI_DNEVNIK/BLAGAJNICKI_DNEVNIK_BLAGAJNICKI_DNEVNIK_STAVKE" />
+      <nodes>
+        <classShapeMoniker Id="6c233702-908a-4f44-8067-965810b5cddd" />
+        <classShapeMoniker Id="fa35e819-2962-4de4-bbbe-6301e19437c6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="071cac39-ad60-4163-8f43-88be32fbfb0f" absoluteBounds="20.875, 5.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PazigradDataContext/NAPLATNA_MJESTA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b87ae88-cfc2-4d1e-bab9-689d7f1fe33d" absoluteBounds="20.89, 6.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f17891a6-ab13-4c0b-98e4-854a12c77fbf" absoluteBounds="6, 1.875, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/PazigradDataContext/PARKING_OPAZANJA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0ef9205-97e1-4037-bbbf-ab881d47eaa5" absoluteBounds="6.015, 2.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 2.86140055338542); (6 : 2.86140055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/PARKING_SEKTORI/PARKING_SEKTORI_PARKING_OPAZANJA" />
+      <nodes>
+        <classShapeMoniker Id="4ba8150b-9d6b-4561-bf55-75cf6423da49" />
+        <classShapeMoniker Id="f17891a6-ab13-4c0b-98e4-854a12c77fbf" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3d4827a5-3ec5-42e8-9cc7-bdef11a5d051" absoluteBounds="11.125, 7.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PazigradDataContext/VozilaPauka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6fe68de-304e-49d1-b6dc-e1ee5687d8ed" absoluteBounds="11.14, 8.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.40625 : 7.75); (12.40625 : 4.40305826822917); (14.5 : 4.40305826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/VozilaPauka/VozilaPauka_LokacijePauka" />
+      <nodes>
+        <classShapeMoniker Id="3d4827a5-3ec5-42e8-9cc7-bdef11a5d051" />
+        <classShapeMoniker Id="fe90171d-0c1b-4573-bd58-798a4b32060f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.125 : 8.03125); (16.3125 : 8.03125); (16.3125 : 6.56899251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/VozilaPauka/VozilaPauka_VozilaCentralnelokacije" />
+      <nodes>
+        <classShapeMoniker Id="3d4827a5-3ec5-42e8-9cc7-bdef11a5d051" />
+        <classShapeMoniker Id="16715fd4-1a47-476a-b5ed-0b727ac8530a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.375 : 7.75); (11.375 : 7.03049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/VozilaPauka/VozilaPauka_Posada" />
+      <nodes>
+        <classShapeMoniker Id="3d4827a5-3ec5-42e8-9cc7-bdef11a5d051" />
+        <classShapeMoniker Id="9b9b60f3-030a-4412-9e0c-923bb0aa0f98" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.125 : 8.2031275); (19.7343775 : 8.2031275); (19.7343775 : 11.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/VozilaPauka/VozilaPauka_PovijestNaloga" />
+      <nodes>
+        <classShapeMoniker Id="3d4827a5-3ec5-42e8-9cc7-bdef11a5d051" />
+        <classShapeMoniker Id="8b583f42-6d20-4b6a-8632-54d603c599f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.125 : 9.71715413411458); (14.125 : 9.71715413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/VozilaPauka/VozilaPauka_NaloziPauku" />
+      <nodes>
+        <classShapeMoniker Id="3d4827a5-3ec5-42e8-9cc7-bdef11a5d051" />
+        <classShapeMoniker Id="2d3d03eb-16ee-4679-89b5-daebf9bfebf5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b70dfa24-f173-4e3e-9913-679e67f4cc41" absoluteBounds="6.75, 13.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PazigradDataContext/POSLOVNI_SUBJEKTI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c91e9447-3bf0-4502-87db-0f3b94c5d78b" absoluteBounds="6.7650000000000006, 13.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7aa37f15-186a-4a9f-a0fc-3bac03303724" absoluteBounds="0.875, 36.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/PazigradDataContext/NALOZI_Predlozak" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e4d0e40-a8b9-4d01-85dd-b9bf9f1cd548" absoluteBounds="0.89, 37.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0f30fe6-8aaf-4031-bacd-e9dc9824b66d" absoluteBounds="20.5, 9.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PazigradDataContext/RACUNI_STORNA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c942152-1909-4b91-a495-f0aa044f00ef" absoluteBounds="20.515, 10.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad0e7a88-0630-4dde-b561-771dc37d9ed9" absoluteBounds="3.625, 8, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/PazigradDataContext/Lokacije" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ab5bc7f-af0a-4cfb-ae6f-78e59ae86bce" absoluteBounds="3.6399999999999997, 8.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 10.9431469726563); (2.875 : 10.9431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/Lokacije/Lokacije_SlikaPrekrsaja" />
+      <nodes>
+        <classShapeMoniker Id="ad0e7a88-0630-4dde-b561-771dc37d9ed9" />
+        <classShapeMoniker Id="23e0f2e4-dbb6-4f64-a891-a5c806278380" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 11.6939111328125); (4.625 : 13.25); (6.125 : 13.25); (6.125 : 16.125); (6.625 : 16.125); (6.625 : 18.6875025); (9.375 : 18.6875025)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/Lokacije/Lokacije_Prekrsaji" />
+      <nodes>
+        <classShapeMoniker Id="ad0e7a88-0630-4dde-b561-771dc37d9ed9" />
+        <classShapeMoniker Id="f2a1138a-4f32-4ac4-b808-08410f825a92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.03125 : 8); (5.03125 : 4.48640055338542); (6 : 4.48640055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/Lokacije/Lokacije_PARKING_OPAZANJA" />
+      <nodes>
+        <classShapeMoniker Id="ad0e7a88-0630-4dde-b561-771dc37d9ed9" />
+        <classShapeMoniker Id="f17891a6-ab13-4c0b-98e4-854a12c77fbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.625 : 0.96875); (5.3593775 : 0.96875); (5.3593775 : 8)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/Terminali/Terminali_Lokacije" />
+      <nodes>
+        <classShapeMoniker Id="e2684760-b520-46a2-b595-672ade7f4cda" />
+        <classShapeMoniker Id="ad0e7a88-0630-4dde-b561-771dc37d9ed9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f8527857-4315-4a73-94b0-3e43e252b2c9" absoluteBounds="4.375, 16.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PazigradDataContext/PredlosciIspisa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d53cc2fc-fb82-4638-adb7-59aba6ff4c3d" absoluteBounds="4.39, 16.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 16.9767976888021); (2.75 : 16.9767976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/PredlosciIspisa/PredlosciIspisa_PrevedeniPredlosci" />
+      <nodes>
+        <classShapeMoniker Id="f8527857-4315-4a73-94b0-3e43e252b2c9" />
+        <classShapeMoniker Id="666217a1-35fa-43f4-a5e2-2d599edaa648" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.375 : 17.3878516210938); (9.375 : 17.3878516210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/PredlosciIspisa/PredlosciIspisa_Prekrsaji" />
+      <nodes>
+        <classShapeMoniker Id="f8527857-4315-4a73-94b0-3e43e252b2c9" />
+        <classShapeMoniker Id="f2a1138a-4f32-4ac4-b808-08410f825a92" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="44f32f1a-5aa7-491c-b8ae-6e3ad15623fd" absoluteBounds="10.25, 25.375, 2, 4.8477197265625">
+      <DataClassMoniker Name="/PazigradDataContext/Zahtjevi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="480c5fba-1d59-43df-bc3b-3b499c8b3650" absoluteBounds="10.265, 25.835, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0018a9b9-c7ee-4afa-aabb-22fc03d9d03a" absoluteBounds="1.25, 13.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PazigradDataContext/PopisPrekrsaja" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e90d72d-1603-47d4-81d9-9f00d76f432d" absoluteBounds="1.2650000000000001, 13.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 14.4815991210937); (3.875 : 14.4815991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PazigradDataContext/PopisPrekrsaja/PopisPrekrsaja_OpisiPrekrsaja" />
+      <nodes>
+        <classShapeMoniker Id="0018a9b9-c7ee-4afa-aabb-22fc03d9d03a" />
+        <classShapeMoniker Id="51170f4d-9029-49b9-a002-81f6fe5d1b5b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c3d86e69-f368-46f4-9df3-e0d399c3efdf" absoluteBounds="3.125, 21, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/PazigradDataContext/ODOBRENJA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="251fa6d6-3225-4a33-b9d0-6214dadc5f33" absoluteBounds="3.14, 21.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df286b82-6edb-4c49-9fa0-d3fc87fb740b" absoluteBounds="7, 8.125, 2, 6.9630354817708326">
+      <DataClassMoniker Name="/PazigradDataContext/Djelatnik" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ba97414-b33a-4946-9f81-08805d24065a" absoluteBounds="7.015, 8.585, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.5 : 8.125); (7.5 : 5.76121256510417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PazigradDataContext/Djelatnik/Djelatnik_PARKING_OPAZANJA" />
+      <nodes>
+        <classShapeMoniker Id="df286b82-6edb-4c49-9fa0-d3fc87fb740b" />
+        <classShapeMoniker Id="f17891a6-ab13-4c0b-98e4-854a12c77fbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7 : 9.90945556640625); (5.625 : 9.90945556640625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PazigradDataContext/Djelatnik/Djelatnik_Lokacije" />
+      <nodes>
+        <classShapeMoniker Id="df286b82-6edb-4c49-9fa0-d3fc87fb740b" />
+        <classShapeMoniker Id="ad0e7a88-0630-4dde-b561-771dc37d9ed9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

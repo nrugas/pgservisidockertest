@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GO">
+  <DataContextMoniker Name="/GODataContext" />
+  <nestedChildShapes>
+    <classShape Id="e0ff4098-f8a6-4acc-ade8-658b0b4326d8" absoluteBounds="2.5, 2.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/GODataContext/GRADOVI1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cce64b9-1aa4-4d1c-aa33-e1530250ba68" absoluteBounds="2.515, 2.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
